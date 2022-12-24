@@ -1,0 +1,50 @@
+.zoom-in-out-box {
+    width: 20px;
+    height: 20px;
+    animation: zoom-in-zoom-out 1s ease infinite;
+  }
+  
+  @keyframes zoom-in-zoom-out {
+    0% {
+      transform: scale(1, 1);
+    }
+    50% {
+      transform: scale(1.5, 1.5);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+  /* camera  */
+
+  .flipchar {
+    animation: mirrorflip 10s 0s linear infinite;
+  }
+  
+  @keyframes mirrorflip {
+    0% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+      
+    }
+    50% {
+      transform: scale(-1, 1);
+      -webkit-transform: scale(-1, 1);
+      -moz-transform: scale(-1, 1);
+      -o-transform: scale(-1, 1);
+      -ms-transform: scale(-1, 1);
+    }
+    100% {
+      transform: scale(1, 1);
+      -webkit-transform: scale(1, 1);
+      -moz-transform: scale(1, 1);
+      -o-transform: scale(1, 1);
+      -ms-transform: scale(1, 1);
+    }
+  }
+
+ 
