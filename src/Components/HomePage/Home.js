@@ -1,7 +1,7 @@
 import React from 'react';
+import SummerCollection from '../SummerCollection/SummerCollection';
 import Banner from './Banner';
 import Category from './Category';
-import TodaysDeal from './TodaysDeal';
 import TodaysDeals from './TodaysDeals';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
             <Banner/>
             <Category/>
             <TodaysDeals/>
-            {/* <TodaysDeal/> */}
+            <SummerCollection/>
         </div>
     );
 };

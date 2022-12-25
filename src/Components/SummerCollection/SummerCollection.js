@@ -1,25 +1,25 @@
 import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  Slide,
-  Slider,
-} from "pure-react-carousel";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+    ButtonBack,
+    ButtonNext,
+    CarouselProvider,
+    Slide,
+    Slider,
+  } from "pure-react-carousel";
+  import React, { useEffect, useState } from "react";
+  import { Link } from "react-router-dom";
 
-const TodaysDeals = () => {
-  const [deals, setDeals] = useState([]);
+const SummerCollection = () => {
+    const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/todayDeals")
+    fetch("http://localhost:5000/summer")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
-  return (
-    <div className="container mx-auto my-20 border-2 p-2">
+    return (
+        <div className="container mx-auto my-20 border-2 p-2">
        <div className="flex justify-between">
-       <h1 className="text-2xl font-bold">Today's Deals</h1>
+       <h1 className="text-2xl font-bold">Summer collections</h1>
        <Link className="text-[#92278f] underline">View All</Link>
        </div>
       <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
@@ -323,7 +323,7 @@ const TodaysDeals = () => {
         </CarouselProvider>
       </div>
     </div>
-  );
+    );
 };
 
-export default TodaysDeals;
+export default SummerCollection;
