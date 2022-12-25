@@ -18,7 +18,7 @@ const Banner = () => {
 
   return (
     <>
-      <Carousel autoPlay infiniteLoop className="w-[90%]  mt-10 mx-auto">
+      <Carousel showThumbs={false} autoPlay infiniteLoop className="w-[90%]  mt-10 mx-auto">
         {slider.map((sl, i) => (
           <div className="lg:h-[500px]" key={i}>
             <img className="h-full" src={sl} />
@@ -26,7 +26,7 @@ const Banner = () => {
         ))}
       </Carousel>
 
-      <div className="flex lg:mx-[100px] mx-2">
+      <div className="flex lg:mx-[96px] mx-2 my-6">
         <div>
           <h1 className="w-36 py-2 btn--doar">Latest News</h1>
         </div>
