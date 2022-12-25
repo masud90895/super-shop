@@ -1,5 +1,6 @@
 import React from 'react';
 import ElectronicCollection from '../ElectronicCollection/ElectronicCollection';
+import LadiesBagCollection from '../LadiesBagCollection/LadiesBagCollection';
 import SummerCollection from '../SummerCollection/SummerCollection';
 import WomenCollection from '../WomenCollection/WomenCollection';
 import Banner from './Banner';
@@ -15,6 +16,7 @@ const Home = () => {
             <SummerCollection/>
             <ElectronicCollection/>
             <WomenCollection/>
+            <LadiesBagCollection/>
         </div>
     );
 };
