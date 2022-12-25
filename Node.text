@@ -18,7 +18,23 @@ collection list :
 6.HIGHLIGHT
 6.5. DESCRIPTION
 7.Question
-8.FAQ
 9.seller Name
 10.seller email
+
+//
+ {
+        "collections": "Today's Deals",
+        "name": "",
+        "image": "",
+        "price": "",
+        "discount": "",
+        "mainPrice": "",
+        "hightlight":"",
+        "descriptions": "",
+        "question":[],
+        "sellerName": "Md Mahafujur Rahaman Masud",
+        "sellerEmail": "masudhossainmbs129@gmail.com",
+        "storeName":""
+
+    }
 
