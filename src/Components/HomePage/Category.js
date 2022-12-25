@@ -9,8 +9,7 @@ const Category = () => {
         "Ladies Bag Collections",
         "Global Products",
         "Sharee's Collection",
-        "SMARTPHONES",
-        "Just For You"
+        "SMARTPHONES"
     ]
     return (
         <div className='mt-8 lg:mx-[100px]'>

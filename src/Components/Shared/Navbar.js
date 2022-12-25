@@ -9,8 +9,8 @@ import orderTrack from "../../Assists/tracking.svg";
 const Navbar = () => {
   const [language, setLanguages] = useState(false);
   return (
-    <div>
-      <div className="bg-gray-200 lg:block hidden">
+    <div className="">
+      <div className="bg-gray-200 lg:block hidden ">
         <div className=" flex font-normal py-2 justify-evenly text-black mx-[350px]">
           <Link className="hover:text-purple-900">SAVE MORE ON APP</Link>
           <Link className="hover:text-purple-900">BECOME A MERCHANT</Link>
@@ -34,7 +34,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* navbar 2nd  */}
-      <div className="lg:flex hidden lg:block justify-around lg:mx-[350px] mt-1">
+      <div className="lg:flex hidden lg:block justify-around lg:mx-[350px] mt-1 ">
         <div>
           <img className="h-11" src={companyLogo} alt="" />
         </div>
