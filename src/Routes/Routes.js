@@ -4,6 +4,7 @@ import BecameSeller from "../Components/BecameSeller/BecameSeller"
 import ErrorPage from "../Components/ErrorPage/ErrorPage"
 import Home from "../Components/HomePage/Home"
 import TodaysDealsAll from "../Components/TodaysDeals/TodaysDealsAll"
+import TodaysDealsProductsDetailes from "../Components/TodaysDeals/TodaysDealsProductsDetailes"
 import Main from "../Outlet/Main"
 
 const router = createBrowserRouter([
@@ -27,7 +28,13 @@ const router = createBrowserRouter([
             {
                 path: "todaydeals",
                 element:<TodaysDealsAll/>
+            },
+            {
+                path:"todaydeals/:id",
+                loader:({params})=> fetch(`http://localhost:5000/todayDeals/${params.id}`),
+                element: <TodaysDealsProductsDetailes/>
             }
+
         ]
     }
   ])

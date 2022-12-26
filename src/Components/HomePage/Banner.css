@@ -27,7 +27,7 @@
   font-size: 15px;
 }
 
-#button-5 a {
+#button-5 p {
   position: relative;
   transition: all .45s ease-Out;
   color: black;
@@ -48,7 +48,7 @@
   left: 0;
 }
 
-#button-5:hover a {
+#button-5:hover p{
   color: white;
 }
 

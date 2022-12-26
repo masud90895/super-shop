@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const TodaysDealsAll = () => {
   const [deals, setDeals] = useState([]);
@@ -134,10 +135,12 @@ const TodaysDealsAll = () => {
                     </div>
                   </div>
 
+                  <Link to={`${deal._id}`}>
                   <div className="button " id="button-5">
                     <div id="translate"></div>
-                    <a >View Detail's</a>
+                    <p >View Detail's</p>
                   </div>
+                  </Link>
                 </div>
               </div>
             </div>

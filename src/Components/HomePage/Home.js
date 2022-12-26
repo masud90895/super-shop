@@ -10,6 +10,7 @@ import Banner from './Banner';
 import Category from './Category';
 import MobailApp from './MobailApp';
 import TodaysDeals from '../TodaysDeals/TodaysDeals';
+import Partner from '../Partner/Partner';
 
 const Home = () => {
     return (
@@ -24,6 +25,7 @@ const Home = () => {
             <LadiesBagCollection/>
             <GlobalProducts/>
             <ShareeCollection/>
+            <Partner/>
             <MobailApp/>
         </div>
     );
