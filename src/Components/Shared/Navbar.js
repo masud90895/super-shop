@@ -224,28 +224,6 @@ const Navbar = () => {
                     </svg>
                     <span className="ml-2 font-normal">My Account</span>
                   </li>
-                  <li className="cursor-pointer  text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-book"
-                      width={16}
-                      height={16}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                      <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                      <line x1={3} y1={6} x2={3} y2={19} />
-                      <line x1={12} y1={6} x2={12} y2={19} />
-                      <line x1={21} y1={6} x2={21} y2={19} />
-                    </svg>
-                    <span className="ml-2 font-normal">SAVE MORE ON APP</span>
-                  </li>
 
                   <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
                     <svg
@@ -289,7 +267,7 @@ const Navbar = () => {
                     </svg>
                     <span className="ml-2">TRACK MY ORDER</span>
                   </li>
-                  <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                  <Link to='about' className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon icon-tabler icon-tabler-tag"
@@ -307,7 +285,7 @@ const Navbar = () => {
                       <circle cx={9} cy={9} r={2} />
                     </svg>
                     <span className="ml-2">ABOUT US</span>
-                  </li>
+                  </Link>
                   <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

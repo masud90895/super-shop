@@ -3,6 +3,7 @@ import AboutUs from "../Components/AboutUs/AboutUs"
 import BecameSeller from "../Components/BecameSeller/BecameSeller"
 import ErrorPage from "../Components/ErrorPage/ErrorPage"
 import Home from "../Components/HomePage/Home"
+import TodaysDealsAll from "../Components/TodaysDeals/TodaysDealsAll"
 import Main from "../Outlet/Main"
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: "becameseller",
                 element: <BecameSeller/>
+            },
+            {
+                path: "todaydeals",
+                element:<TodaysDealsAll/>
             }
         ]
     }

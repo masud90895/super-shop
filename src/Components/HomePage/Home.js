@@ -9,7 +9,7 @@ import WomenCollection from '../WomenCollection/WomenCollection';
 import Banner from './Banner';
 import Category from './Category';
 import MobailApp from './MobailApp';
-import TodaysDeals from './TodaysDeals';
+import TodaysDeals from '../TodaysDeals/TodaysDeals';
 
 const Home = () => {
     return (
