@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import brand from "../../Assists/logo.png"
 
 const Login = () => {
@@ -81,12 +82,12 @@ const Login = () => {
       <p className="mt-8 text-xs font-light text-center text-gray-400">
         {" "}
         Don't have an account?{" "}
-        <a
-          href="#"
+        <Link
+          to="../register"
           className="font-medium text-gray-700 dark:text-gray-200 hover:underline"
         >
           Create One
-        </a>
+        </Link>
       </p>
     </div>
     </div>
