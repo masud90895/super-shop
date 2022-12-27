@@ -67,6 +67,8 @@ const SummerCollection = () => {
                 >
                   {deals.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
+                       <Link to={`summer/${deal._id}`}>
+
                       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                         <div
                           className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -93,6 +95,7 @@ const SummerCollection = () => {
                           </div>
                         </div>
                       </div>
+                       </Link>
                     </Slide>
                   ))}
                 </div>
@@ -165,6 +168,8 @@ const SummerCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
+                      <Link to={`summer/${deal._id}`}>
+
                       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                         <div
                           className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -191,6 +196,7 @@ const SummerCollection = () => {
                           </div>
                         </div>
                       </div>
+                      </Link>
                     </Slide>
                   ))}
                 </div>
@@ -263,6 +269,8 @@ const SummerCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
+                      <Link to={`summer/${deal._id}`}>
+
                       <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                         <div
                           className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -289,6 +297,7 @@ const SummerCollection = () => {
                           </div>
                         </div>
                       </div>
+                      </Link>
                     </Slide>
                   ))}
                 </div>
