@@ -34,7 +34,7 @@ const Navbar = () => {
                   Download the App for the best experience
                 </p>
                 <div className="mt-2 flex gap-3">
-                  <img className="w-24 " src={qr} alt="" />
+                  <img loading="lazy" className="w-24 " src={qr} alt="" />
                   <ul className="text-[#92278f]">
                     <p>Super Shop through our app to enjoy:</p>
                     <li className="decoration-dotted">• Exclusive Deals</li>
@@ -70,7 +70,7 @@ const Navbar = () => {
       {/* navbar 2nd  */}
       <div className="lg:flex hidden lg:block justify-around lg:mx-[350px] mt-1 ">
         <div>
-          <img className="h-11" src={companyLogo} alt="" />
+          <img loading="lazy" className="h-11" src={companyLogo} alt="" />
         </div>
         <div className="flex border border-gray-500 rounded-md ">
           <select className="select">
@@ -88,7 +88,7 @@ const Navbar = () => {
         </div>
         {/* navbar 3rd */}
         <div className="flex items-center gap-3">
-          <img className="h-12" src={orderTrack} alt="" />
+          <img loading="lazy" className="h-12" src={orderTrack} alt="" />
           <button className="p-1 text-white rounded-lg flex gap-2  hover:bg-red-800  bg-red-600 border-none ">
             <h1 className="flipchar flex gap-2">
               * Live <BsCameraReelsFill className="inline" />
@@ -311,12 +311,12 @@ const Navbar = () => {
             {/* end  */}
             {/* logo  */}
             <div>
-              <img className="h-10" src={companyLogo} alt="" />
+              <img loading="lazy" className="h-10" src={companyLogo} alt="" />
             </div>
           </div>
 
           <div className="flex gap-1 items-center">
-            <img className="h-12" src={orderTrack} alt="" />
+            <img loading="lazy" className="h-12" src={orderTrack} alt="" />
             <button className=" text-white rounded-lg p-2 h-9   hover:bg-red-800  bg-red-600 border-none ">
               <BsCameraReelsFill className="flipchar" />
             </button>

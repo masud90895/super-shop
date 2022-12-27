@@ -69,6 +69,7 @@ const SummerCollectionAll = () => {
               >
                 <div>
                   <img
+                  loading="lazy"
                     src={deal.image}
                     alt=""
                     className="w-full h-44 relative border"

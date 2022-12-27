@@ -32,16 +32,19 @@ const AboutUs = () => {
         </div>
         <div className="w-full lg:w-6/12">
           <img
+          loading="lazy"
             className="lg:block hidden w-full"
             src="https://i.ibb.co/RjNH7QB/Rectangle-122-1.png"
             alt="people discussing on board"
           />
           <img
+          loading="lazy"
             className="lg:hidden sm:block hidden w-full"
             src="https://i.ibb.co/16fPqrg/Rectangle-122-2.png"
             alt="people discussing on board"
           />
           <img
+          loading="lazy"
             className="sm:hidden block w-full"
             src="https://i.ibb.co/Jxhpxh6/Rectangle-122.png"
             alt="people discussing on board"

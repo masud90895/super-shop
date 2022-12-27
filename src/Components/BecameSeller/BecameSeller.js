@@ -11,6 +11,7 @@ const BecameSeller = () => {
           <div className="bg-gray-100 py-12 flex flex-wrap items-center justify-center">
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
+              loading="lazy"
                 src="https://i.ibb.co/DwNs7zG/Steps.png"
                 alt="step1"
                 className="w-full h-full"
@@ -26,6 +27,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
+              loading="lazy"
                 src="https://i.ibb.co/wNZ4nzy/Steps2.png"
                 alt="step2"
                 className="w-full h-full"
@@ -41,6 +43,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
+              loading="lazy"
                 src="https://i.ibb.co/c2k4Gbr/Steps3.png"
                 alt="step3"
                 className="w-full h-full"
@@ -56,6 +59,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative lg:mt-0 mt-4">
               <img
+              loading="lazy"
                 src="https://i.ibb.co/XCdjrhm/Steps4.png"
                 alt="step4"
                 className="w-full h-full"

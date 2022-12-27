@@ -5,7 +5,7 @@ const MobailApp = () => {
         <section  className="bg-gray-200  lg:mx-[180px]">
     <div  className="container flex flex-col items-center px-4 py-12 mx-auto xl:flex-row">
         <div  className="flex justify-center xl:w-1/2">
-            <img  className="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full" src="https://icms-image.slatic.net/images/ims-web/ede99176-35bd-4480-bcaf-e57c04f2221b.png" alt=""/>
+            <img loading="lazy" className="h-80 w-80 sm:w-[28rem] sm:h-[28rem] flex-shrink-0 object-cover rounded-full" src="https://icms-image.slatic.net/images/ims-web/ede99176-35bd-4480-bcaf-e57c04f2221b.png" alt=""/>
         </div>
 
         <div  className="flex flex-col items-center mt-6 xl:items-start xl:w-1/2 xl:mt-0">

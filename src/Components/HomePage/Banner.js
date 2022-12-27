@@ -21,7 +21,7 @@ const Banner = () => {
       <Carousel showThumbs={false} autoPlay infiniteLoop className="w-[90%]  mt-10 mx-auto">
         {slider.map((sl, i) => (
           <div className="lg:h-[500px]" key={i}>
-            <img className="h-full" src={sl} />
+            <img loading="lazy" className="h-full" src={sl} />
           </div>
         ))}
       </Carousel>
