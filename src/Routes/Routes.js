@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom"
 import AboutUs from "../Components/AboutUs/AboutUs"
+import Login from "../Components/Athentication/Login"
+import SingUp from "../Components/Athentication/SingUp"
 import BecameSeller from "../Components/BecameSeller/BecameSeller"
 import ElectronicCollectionAll from "../Components/ElectronicCollection/ElectronicCollectionAll"
 import ElectronicCollectionDetailes from "../Components/ElectronicCollection/ElectronicCollectionDetailes"
@@ -111,6 +113,14 @@ const router = createBrowserRouter([
                 loader:({params})=> fetch(`http://localhost:5000/sharee/${params.id}`),
                 element: <ShareeCollectionDetailes/>
             },
+            {
+                path: "login",
+                element: <Login/>
+            },
+            {
+                path: "register",
+                element:<SingUp/>
+            }
 
 
         ]

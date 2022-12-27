@@ -111,10 +111,10 @@ const Navbar = () => {
             >
               <li>
                 <Link
-                  to="/becameseller"
+                  to="/login"
                   className=" text-xl text-white bg-purple-900 mb-2 "
                 >
-                  Became a Seller
+                   Login / Signup
                 </Link>
               </li>
               <hr />
@@ -167,7 +167,7 @@ const Navbar = () => {
               {show && (
                 <ul className="visible z-50 border transition duration-300 opacity-100 bg-white dark:bg-gray-800  shadow rounded mt-2 py-1 w-48 absolute ">
                   <Link
-                    to="becameseller"
+                    to="login"
                     className="cursor-pointer text-white bg-purple-700  text-sm leading-3 tracking-normal py-3 px-3 flex items-center"
                   >
                     <svg
@@ -186,7 +186,7 @@ const Navbar = () => {
                       <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
                       <rect x={9} y={3} width={6} height={4} rx={2} />
                     </svg>
-                    <span className="ml-2 font-normal">BECOME A SELLER</span>
+                    <span className="ml-2 font-normal"> Login / Signup</span>
                   </Link>
                   <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
                     <svg
