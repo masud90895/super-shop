@@ -20,7 +20,7 @@ const GlobalProducts = () => {
         <div className="container mx-auto my-20 border-2 p-2">
        <div className="flex justify-between">
        <h1 className="text-2xl font-bold">Global Products collections</h1>
-       <Link className="text-[#92278f] underline">View All</Link>
+       <Link to="globalProducts" className="text-[#92278f] underline">View All</Link>
        </div>
       <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
         {/* Carousel for desktop and large size devices */}
