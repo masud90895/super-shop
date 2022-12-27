@@ -17,7 +17,7 @@ const ElectronicCollection = () => {
       .then((data) => setDeals(data));
   }, []);
   return (
-    <div className="container mx-auto my-20 border-2 p-2">
+    <div id="electronic" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Electronic collections</h1>
         <Link to="electronic" className="text-[#92278f] underline">

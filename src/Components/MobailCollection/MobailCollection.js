@@ -17,7 +17,7 @@ const MobailCollection = () => {
       .then((data) => setDeals(data));
   }, []);
   return (
-    <div className="container mx-auto my-20 border-2 p-2">
+    <div id="mobail" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Smart Phone Collection</h1>
         <Link to="smartphone" className="text-[#92278f] underline">View All</Link>

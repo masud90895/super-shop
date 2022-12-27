@@ -12,7 +12,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   return (
-    <div className="">
+    <div className="sticky top-0 z-50 bg-white">
       <div className="bg-gray-200 lg:block hidden ">
         <div className=" flex font-normal py-2 justify-evenly text-black mx-[350px]">
           {/* <label className="hover:text-purple-900" htmlFor="my-modal">
@@ -45,7 +45,9 @@ const Navbar = () => {
               </ul>
             )}
           </div>
-          <Link to='becameseller' className="hover:text-purple-900">BECOME A SELLER</Link>
+          <Link to="becameseller" className="hover:text-purple-900">
+            BECOME A SELLER
+          </Link>
           <Link className="hover:text-purple-900">CAMPAIGN</Link>
           <Link className="hover:text-purple-900">TRACK MY ORDER</Link>
           <button
@@ -68,7 +70,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* navbar 2nd  */}
-      <div className="lg:flex hidden lg:block justify-around lg:mx-[350px] mt-1 ">
+      <div className="lg:flex  hidden lg:block justify-around lg:mx-[350px] mt-1 ">
         <div>
           <img loading="lazy" className="h-11" src={companyLogo} alt="" />
         </div>
@@ -164,7 +166,10 @@ const Navbar = () => {
               </div>
               {show && (
                 <ul className="visible z-50 border transition duration-300 opacity-100 bg-white dark:bg-gray-800  shadow rounded mt-2 py-1 w-48 absolute ">
-                  <Link to='becameseller' className="cursor-pointer text-white bg-purple-700  text-sm leading-3 tracking-normal py-3 px-3 flex items-center">
+                  <Link
+                    to="becameseller"
+                    className="cursor-pointer text-white bg-purple-700  text-sm leading-3 tracking-normal py-3 px-3 flex items-center"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon icon-tabler icon-tabler-clipboard"
@@ -267,7 +272,10 @@ const Navbar = () => {
                     </svg>
                     <span className="ml-2">TRACK MY ORDER</span>
                   </li>
-                  <Link to='about' className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                  <Link
+                    to="about"
+                    className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon icon-tabler icon-tabler-tag"

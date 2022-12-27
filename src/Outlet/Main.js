@@ -7,7 +7,7 @@ import Navbar from "../Components/Shared/Navbar";
 const Main = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <Outlet />
       <Footer />
       <ButtomContactButton/>

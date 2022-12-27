@@ -17,7 +17,7 @@ const GlobalProducts = () => {
       .then((data) => setDeals(data));
   }, []);
   return (
-    <div className="container mx-auto my-20 border-2 p-2">
+    <div id="global" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Global Products collections</h1>
         <Link to="globalProducts" className="text-[#92278f] underline">

@@ -17,7 +17,7 @@ const TodaysDeals = () => {
       .then((data) => setDeals(data));
   }, []);
   return (
-    <div className="container mx-auto my-20 border-2 p-2">
+    <div id="todays" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Today's Deals</h1>
         <Link to="todaydeals" className="text-[#92278f] underline">

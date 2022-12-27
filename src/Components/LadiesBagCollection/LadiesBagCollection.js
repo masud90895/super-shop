@@ -17,7 +17,7 @@ const LadiesBagCollection = () => {
         .then((data) => setDeals(data));
     }, []);
       return (
-          <div className="container mx-auto my-20 border-2 p-2">
+          <div id="ladies" className="container mx-auto my-20 border-2 p-2">
          <div className="flex justify-between">
          <h1 className="text-2xl font-bold">Ladies Bag  collections</h1>
          <Link to="ladiesBag" className="text-[#92278f] underline">View All</Link>
