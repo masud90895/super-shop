@@ -135,7 +135,7 @@ const TodaysDealsAll = () => {
                     </div>
                   </div>
 
-                  <Link to={`${deal._id}`}>
+                  <Link to={`../products/${deal._id}`}>
                   <div className="button " id="button-5">
                     <div id="translate"></div>
                     <p >View Detail's</p>

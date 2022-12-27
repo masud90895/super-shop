@@ -30,8 +30,8 @@ const router = createBrowserRouter([
                 element:<TodaysDealsAll/>
             },
             {
-                path:"todaydeals/:id",
-                loader:({params})=> fetch(`http://localhost:5000/todayDeals/${params.id}`),
+                path:"products/:id",
+                loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`),
                 element: <TodaysDealsProductsDetailes/>
             }
 
