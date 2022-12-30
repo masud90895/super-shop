@@ -22,10 +22,26 @@ const SingUp = () => {
 
         updateName(name)
           .then((result) => {
-            console.log(user);
-            toast.success("User created successfully");
-            form.reset();
-            navigate("/");
+            const user = {
+              name,
+              role: "user",
+              email,
+            };
+            fetch("http://localhost:5000/user", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(user),
+            })
+              .then((res) => res.json())
+              .then((result) => {
+                console.log(user);
+                toast.success("User created successfully");
+
+                form.reset();
+                navigate("/");
+              });
           })
           .catch((error) => {
             console.log(error);
@@ -41,9 +57,28 @@ const SingUp = () => {
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
-        console.log(result.user);
-        navigate("/");
-        toast.success("User created successfully");
+        const user = {
+          name: result?.user?.displayName,
+          role: "user",
+          email: result?.user?.email,
+        };
+        console.log(result);
+
+        if(result?.user?.email){
+            fetch("http://localhost:5000/user", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(user),
+        })
+          .then((res) => res.json())
+          .then((result) => {
+            console.log(result.user);
+            navigate("/");
+            toast.success("User created successfully");
+          });
+        }
       })
       .catch((err) => console.log(err));
   };
