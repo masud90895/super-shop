@@ -20,7 +20,7 @@ const LadiesBagCollection = () => {
           <div id="ladies" className="container mx-auto my-20 border-2 p-2">
          <div className="flex justify-between">
          <h1 className="text-2xl font-bold">Ladies Bag  collections</h1>
-         <Link to="ladiesBag" className="text-[#92278f] underline">View All</Link>
+         <Link to={`/${deals[0]?.collections}`} className="text-[#92278f] underline">View All</Link>
          </div>
         <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
           {/* Carousel for desktop and large size devices */}
@@ -65,7 +65,7 @@ const LadiesBagCollection = () => {
                   >
                     {deals.map((deal, i) => (
                       <Slide key={deal._id} index={i}>
-                        <Link to={`ladiesBag/${deal._id}`}>
+                       <Link to={`product/${deal._id}`}>
 
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
@@ -166,7 +166,7 @@ const LadiesBagCollection = () => {
                   >
                     {
                       deals?.map((deal,i)=><Slide key={deal._id} index={i}>
-                        <Link to={`ladiesBag/${deal._id}`}>
+                       <Link to={`product/${deal._id}`}>
 
                           <div
               className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"
@@ -270,7 +270,7 @@ const LadiesBagCollection = () => {
                   >
                    {
                       deals?.map((deal,i)=> <Slide key={deal._id} index={i}>
-                        <Link to={`ladiesBag/${deal._id}`}>
+                       <Link to={`product/${deal._id}`}>
 
                           <div
               className="flex flex-col items-center justify-center w-full max-w-sm mx-auto"

@@ -13,20 +13,26 @@ import TodaysDeals from '../TodaysDeals/TodaysDeals';
 import Partner from '../Partner/Partner';
 
 const Home = () => {
+    const categorys =[
+        <TodaysDeals/>,
+            <MobailCollection/>,
+            <SummerCollection/>,
+            <ElectronicCollection/>,
+            <WomenCollection/>,
+            <LadiesBagCollection/>,
+            <GlobalProducts/>,
+            <ShareeCollection/>,
+            <Partner/>,
+            <MobailApp/>
+    ]
     return (
         <div>
             <Banner/>
             <Category/>
-            <TodaysDeals/>
-            <MobailCollection/>
-            <SummerCollection/>
-            <ElectronicCollection/>
-            <WomenCollection/>
-            <LadiesBagCollection/>
-            <GlobalProducts/>
-            <ShareeCollection/>
-            <Partner/>
-            <MobailApp/>
+            {
+                categorys?.map((category,i)=> <div key={i}>{category}</div>)
+            }
+            
         </div>
     );
 };

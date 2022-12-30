@@ -16,11 +16,14 @@ const TodaysDeals = () => {
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
+
+  console.log("today",deals);
+
   return (
     <div id="todays" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Today's Deals</h1>
-        <Link to="todaydeals" className="text-[#92278f] underline">
+        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f] underline">
           View All
         </Link>
       </div>
@@ -67,7 +70,7 @@ const TodaysDeals = () => {
                 >
                   {deals.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                      <Link to={`todaydeals/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -167,7 +170,7 @@ const TodaysDeals = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                      <Link to={`todaydeals/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -267,7 +270,7 @@ const TodaysDeals = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                      <Link to={`todaydeals/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"

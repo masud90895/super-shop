@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
 
-const SummerCollectionAll = () => {
+const AllProducts = () => {
     const [deals, setDeals] = useState([]);
 
+    const params = useParams()
+    console.log(deals);
+    
+
+
+
     useEffect(() => {
-      fetch("http://localhost:5000/summer")
-        .then((res) => res.json())
-        .then((data) => setDeals(data));
-    }, []);
+        fetch(`http://localhost:5000/allproducts?category=${params?.category}`)
+          .then((res) => res.json())
+          .then((data) => setDeals(data));
+      }, [params?.category]);
     return (
         <div className=" 2xl:container 2xl:mx-auto">
         <div className=" bg-gray-50 text-center lg:py-10 md:py-8 py-6">
           <p className=" w-10/12 mx-auto md:w-full  font-semibold lg:text-4xl text-3xl lg:leading-9 md:leading-7 leading-9 text-center text-gray-800">
-            Summer Collection{" "}
+            {deals[0]?.collections} Collection{" "}
           </p>
         </div>
         <div className=" py-6 lg:px-20 md:px-6 px-4">
           <p className=" font-normal text-sm leading-3 text-gray-600 ">
-            Home / Shop by Category / Summer Collection
+            Home / Shop by Category / {deals[0]?.collections}
           </p>
           <hr className=" w-full bg-gray-200 my-6" />
   
@@ -135,7 +141,7 @@ const SummerCollectionAll = () => {
                       </div>
                     </div>
   
-                    <Link to={`../summer/${deal._id}`}>
+                    <Link to={`../product/${deal._id}`}>
                     <div className="button " id="button-5">
                       <div id="translate"></div>
                       <p >View Detail's</p>
@@ -153,4 +159,4 @@ const SummerCollectionAll = () => {
     );
 };
 
-export default SummerCollectionAll;
+export default AllProducts;
