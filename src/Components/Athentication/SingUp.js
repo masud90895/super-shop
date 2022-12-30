@@ -64,23 +64,26 @@ const SingUp = () => {
         };
         console.log(result);
 
-        if(result?.user?.email){
-            fetch("http://localhost:5000/user", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: JSON.stringify(user),
-        })
-          .then((res) => res.json())
-          .then((result) => {
-            console.log(result.user);
-            navigate("/");
-            toast.success("User created successfully");
-          });
+        if (result?.user?.email) {
+          fetch("http://localhost:5000/user", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              console.log(result.user);
+              navigate("/");
+              toast.success("User created successfully");
+            });
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err)
+        toast.err(err.message)
+      });
   };
 
   return (
