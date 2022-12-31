@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { HiOutlinePhoneMissedCall } from "react-icons/hi";
 import { BsSearch, BsCameraReelsFill } from "react-icons/bs";
@@ -6,11 +6,48 @@ import "./Navbae.css";
 import companyLogo from "../../Assists/logo.png";
 import orderTrack from "../../Assists/tracking.svg";
 import qr from "../../Assists/frame.png";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const Navbar = () => {
+  const { user, logout } = useContext(AuthContext);
   const [language, setLanguages] = useState(false);
   const [show, setShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [userEmail, setUserEmail] = useState({});
+
+  const handleLogOut = () => {
+    logout()
+      .then((result) => {
+        toast("LogOut!", {
+          icon: "👏",
+          style: {
+            borderRadius: "10px",
+            background: "#FF0000",
+            color: "#fff",
+          },
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
+
+  useEffect(() => {
+    if (user?.email) {
+      fetch(`http://localhost:5000/user?email=${user?.email}`)
+        .then((res) => res.json())
+        .then((result) => {
+          setUserEmail(result);
+        })
+        .catch((err) => {
+          toast.error(err.message);
+          console.log(err);
+        });
+    }
+  }, [user?.email]);
+
   return (
     <div className="sticky top-0 z-50 bg-white">
       <div className="bg-gray-200 lg:block hidden ">
@@ -49,7 +86,14 @@ const Navbar = () => {
             BECOME A SELLER
           </Link>
           <Link className="hover:text-purple-900">CAMPAIGN</Link>
-          <Link className="hover:text-purple-900">TRACK MY ORDER</Link>
+          {user?.email && (
+            <Link className="hover:text-purple-900">TRACK MY ORDER</Link>
+          )}
+          {(userEmail?.role === "admin" || userEmail?.role === "seller") && (
+            <Link to="deshboard" className="hover:text-purple-900">
+              Deshboard
+            </Link>
+          )}
           <button
             className="underline hover:text-purple-900"
             onClick={() => setLanguages(!language)}
@@ -109,14 +153,17 @@ const Navbar = () => {
               tabIndex={0}
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <Link
-                  to="/login"
-                  className=" text-xl text-white bg-purple-900 mb-2 "
-                >
-                   Login / Signup
-                </Link>
-              </li>
+              {!user?.email && (
+                <li>
+                  <Link
+                    to="/login"
+                    className=" text-xl text-white bg-purple-900 mb-2 "
+                  >
+                    Login / Signup
+                  </Link>
+                </li>
+              )}
+
               <hr />
               <li>
                 <a>My Account</a>
@@ -127,9 +174,11 @@ const Navbar = () => {
               <li>
                 <a>My Orders</a>
               </li>
-              <li>
-                <a>Log Out</a>
-              </li>
+              {user?.email && (
+                <li className=" text-xl text-white bg-red-600 mb-2 rounded-xl">
+                  <button onClick={handleLogOut}>Logout</button>
+                </li>
+              )}
             </ul>
           </div>
         </div>
@@ -166,28 +215,30 @@ const Navbar = () => {
               </div>
               {show && (
                 <ul className="visible z-50 border transition duration-300 opacity-100 bg-white dark:bg-gray-800  shadow rounded mt-2 py-1 w-48 absolute ">
-                  <Link
-                    to="login"
-                    className="cursor-pointer text-white bg-purple-700  text-sm leading-3 tracking-normal py-3 px-3 flex items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-clipboard"
-                      width={16}
-                      height={16}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  {!user?.email && (
+                    <Link
+                      to="login"
+                      className="cursor-pointer text-white bg-purple-700  text-sm leading-3 tracking-normal py-3 px-3 flex items-center"
                     >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
-                      <rect x={9} y={3} width={6} height={4} rx={2} />
-                    </svg>
-                    <span className="ml-2 font-normal"> Login / Signup</span>
-                  </Link>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-clipboard"
+                        width={16}
+                        height={16}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
+                        <rect x={9} y={3} width={6} height={4} rx={2} />
+                      </svg>
+                      <span className="ml-2 font-normal"> Login / Signup</span>
+                    </Link>
+                  )}
                   <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -294,25 +345,30 @@ const Navbar = () => {
                     </svg>
                     <span className="ml-2">ABOUT US</span>
                   </Link>
-                  <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-x"
-                      width={16}
-                      height={16}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  {user?.email && (
+                    <li
+                      onClick={handleLogOut}
+                      className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal"
                     >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <line x1={18} y1={6} x2={6} y2={18} />
-                      <line x1={6} y1={6} x2={18} y2={18} />
-                    </svg>
-                    <span className="ml-2">Sign Out</span>
-                  </li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-x"
+                        width={16}
+                        height={16}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1={18} y1={6} x2={6} y2={18} />
+                        <line x1={6} y1={6} x2={18} y2={18} />
+                      </svg>
+                      <span className="ml-2">Sign Out</span>
+                    </li>
+                  )}
                 </ul>
               )}
             </div>

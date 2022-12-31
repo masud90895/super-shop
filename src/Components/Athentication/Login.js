@@ -5,8 +5,8 @@ import brand from "../../Assists/logo.png";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
-  const Navigate = useNavigate()
-  const { googleLogin,login } = useContext(AuthContext);
+  const Navigate = useNavigate();
+  const { googleLogin, login } = useContext(AuthContext);
   const handleGoogleLogin = () => {
     googleLogin()
       .then((result) => {
@@ -19,6 +19,26 @@ const Login = () => {
         toast.error(err.message);
       });
   };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(email, password);
+    login(email, password)
+      .then((result) => {
+        console.log(result);
+        Navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
+
   return (
     <div className="flex items-center h-screen">
       <div className="w-full max-w-sm p-6 m-auto mx-auto border bg-white rounded-lg shadow-md dark:bg-gray-800">
@@ -26,7 +46,7 @@ const Login = () => {
           <img src={brand} alt="" />
         </h1>
 
-        <form className="mt-6">
+        <form onSubmit={handleLogin} className="mt-6">
           <div>
             <label
               htmlFor="email"
@@ -36,7 +56,9 @@ const Login = () => {
             </label>
             <input
               type="email"
+              name="email"
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-purple-400 dark:focus:border-purple-300 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
 
@@ -58,12 +80,17 @@ const Login = () => {
 
             <input
               type="password"
+              name="password"
               className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-purple-400 dark:focus:border-purple-300 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              required
             />
           </div>
 
           <div className="mt-6">
-            <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50">
+            <button
+              type="submit"
+              className="w-full px-6 py-2.5 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-50"
+            >
               Sign In
             </button>
           </div>
