@@ -8,6 +8,7 @@ import BecameSeller from "../Components/BecameSeller/BecameSeller";
 import Deshboard from "../Components/Deshboard/Deshboard";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
+import TrackOrder from "../Components/TrackOrder/TrackOrder";
 import Main from "../Outlet/Main";
 
 const router = createBrowserRouter([
@@ -34,8 +35,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/product/:id",
-        loader:  ({ params }) =>
-        fetch(`http://localhost:5000/product/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/product/${params.id}`),
         element: <AllProductsDetailes />,
       },
       {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "register",
         element: <SingUp />,
+      },
+      {
+        path: "trackOrder",
+        element: <TrackOrder />,
       },
     ],
   },

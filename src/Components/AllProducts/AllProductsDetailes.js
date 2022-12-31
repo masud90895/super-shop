@@ -1,6 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactImageMagnify from "react-image-magnify";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import ImageMagnify from "../ImageMagnify/ImageMagnify";
 import {
   AiOutlineStar,
@@ -18,10 +18,11 @@ import { toast } from "react-hot-toast";
 import ProductsDetailes from "../TodaysDeals/ProductsDetailes";
 import TodaysDealsProductsHeader from "../TodaysDeals/TodaysDealsProductsHeader";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AllProductsDetailes = () => {
   const { user } = useContext(AuthContext);
-  const [addToCart, setAddToCart] = useState({});
+  const nagigate = useNavigate();
 
   const [quantity, setQuantity] = useState(1);
   const products = useLoaderData();
@@ -40,7 +41,7 @@ const AllProductsDetailes = () => {
     const productCart = {
       name: product.name,
       image: product.image,
-      price: product.price,
+      price: parseFloat(product.price) * parseFloat(quantity),
       quantity: quantity,
       email: user?.email,
     };
@@ -74,7 +75,9 @@ const AllProductsDetailes = () => {
                     {user?.displayName}
                   </p>
                   <p className="mt-1 text-sm text-gray-500">
-                   You Added <span className="text-purple-600">{product?.name}</span> On Your Card
+                    You Added{" "}
+                    <span className="text-purple-600">{product?.name}</span> On
+                    Your Card
                   </p>
                 </div>
               </div>
@@ -92,13 +95,65 @@ const AllProductsDetailes = () => {
       });
   };
 
+  const reportProduct = (product) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: `You want be report ${product?.name}`,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, Report it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/report/${product?._id}`, {
+          method: "PUT",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({ report: true }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            Swal.fire("Reported!", "Product has been Report.", "success");
+          });
+      }
+    });
+  };
+
+  const buyProduct = (product) => {
+    if (!user?.email) {
+      return toast.error("Please Login to add to card");
+    }
+    const productCart = {
+      name: product.name,
+      image: product.image,
+      price: parseFloat(product.price) * parseFloat(quantity),
+      quantity: quantity,
+      email: user?.email,
+    };
+    fetch("http://localhost:5000/addToCart", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(productCart),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        toast.success("please payment");
+        nagigate("../../trackOrder");
+      });
+  };
+
   return (
     <div className="lg:mx-[200px]">
       <TodaysDealsProductsHeader products={products} />
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
         {/* image magnify  */}
-        <div className="w-[339px] border">
+        <div className="w-[339px] border ">
           <ReactImageMagnify
             {...{
               smallImage: {
@@ -126,14 +181,14 @@ const AllProductsDetailes = () => {
               <AiOutlineStar />
             </div>
             <div>
-              <h1>{products.question.length} Review</h1>
+              <h1>{products?.question?.length} Review</h1>
             </div>
           </div>
 
           <div className="flex gap-3 mb-3">
             <h1>
               Store :{" "}
-              <span className="text-[#92278f]"> {products.storeName}</span>
+              <span className="text-[#92278f]"> {products?.storeName}</span>
             </h1>
             <h1>||</h1>
             <h1>
@@ -170,10 +225,14 @@ const AllProductsDetailes = () => {
           <hr />
           {/* button  */}
           <div className="flex gap-5  my-5">
-            <div className="button " id="button-5">
+            <button
+              onClick={() => buyProduct(products)}
+              className="button "
+              id="button-5"
+            >
               <div id="translate"></div>
               <p>Buy Now</p>
-            </div>
+            </button>
 
             <button
               onClick={() => handleAddToCard(products)}
@@ -235,7 +294,7 @@ const AllProductsDetailes = () => {
 
           <div className="border shadow-2xl p-3 my-3">
             <h1>Sold By</h1>
-            <h1 className="font-bold text-[#92278f]">{products.storeName}</h1>
+            <h1 className="font-bold text-[#92278f]">{products?.storeName}</h1>
           </div>
 
           {/* report  */}
@@ -245,6 +304,7 @@ const AllProductsDetailes = () => {
             </h1>
             <button
               style={{ fontSize: "16px", padding: "10px" }}
+              onClick={() => reportProduct(products)}
               className="btn text-lg   w-full hover:bg-red-600 bg-white hover:text-white text-black border-2 hover:border-red-600 border-red-600"
             >
               REPORT

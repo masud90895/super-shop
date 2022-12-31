@@ -87,7 +87,9 @@ const Navbar = () => {
           </Link>
           <Link className="hover:text-purple-900">CAMPAIGN</Link>
           {user?.email && (
-            <Link className="hover:text-purple-900">TRACK MY ORDER</Link>
+            <Link to="../../trackOrder" className="hover:text-purple-900">
+              TRACK MY ORDER
+            </Link>
           )}
           {(userEmail?.role === "admin" || userEmail?.role === "seller") && (
             <Link to="deshboard" className="hover:text-purple-900">
@@ -303,7 +305,10 @@ const Navbar = () => {
                   <li>
                     <hr className="border-gray-200 dark:border-gray-700 my-1" />
                   </li>
-                  <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal">
+                  <Link
+                    to="../../trackOrder"
+                    className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal"
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="icon icon-tabler icon-tabler-device-mobile"
@@ -322,7 +327,7 @@ const Navbar = () => {
                       <line x1={12} y1={17} x2={12} y2="17.01" />
                     </svg>
                     <span className="ml-2">TRACK MY ORDER</span>
-                  </li>
+                  </Link>
                   <Link
                     to="about"
                     className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center font-normal"
