@@ -32,7 +32,22 @@ const BecameSeller = () => {
       recoveryEmail,
       altPhone,
     };
-    console.log(data);
+    fetch("http://localhost:5000/sellerRequest", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        if (result?.status === 401) {
+          return toast.error(result?.message);
+        }
+        toast.success(result.message);
+        form.reset()
+      });
   };
   return (
     <>
