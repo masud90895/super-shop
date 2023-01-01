@@ -51,7 +51,7 @@ const Navbar = () => {
   return (
     <div className="sticky top-0 z-50 bg-white">
       <div className="bg-gray-200 lg:block hidden ">
-        <div className=" flex font-normal py-2 justify-evenly text-black mx-[350px]">
+        <div className=" flex font-normal py-2 justify-evenly text-black ">
           {/* <label className="hover:text-purple-900" htmlFor="my-modal">
             SAVE MORE ON APP
           </label> */}
@@ -116,7 +116,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* navbar 2nd  */}
-      <div className="lg:flex  hidden lg:block justify-around lg:mx-[350px] mt-1 ">
+      <div className="lg:flex  hidden lg:block justify-around  mt-1 ">
         <div>
           <img loading="lazy" className="h-11" src={companyLogo} alt="" />
         </div>

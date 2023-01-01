@@ -96,6 +96,9 @@ const AllProductsDetailes = () => {
   };
 
   const reportProduct = (product) => {
+    if (!user?.email) {
+      return toast.error("Please Login to Report");
+    }
     Swal.fire({
       title: "Are you sure?",
       text: `You want be report ${product?.name}`,
@@ -148,12 +151,12 @@ const AllProductsDetailes = () => {
   };
 
   return (
-    <div className="lg:mx-[200px]">
+    <div className="lg:mx-[30px]">
       <TodaysDealsProductsHeader products={products} />
 
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
         {/* image magnify  */}
-        <div className="w-[339px] border ">
+        <div className=" border ">
           <ReactImageMagnify
             {...{
               smallImage: {

@@ -12,9 +12,10 @@ const SingUp = () => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
-    // const image = form.image;
     const email = form.email.value;
     const password = form.password.value;
+
+    // console.log(form.image.files);
 
     userCreate(email, password)
       .then((result) => {
@@ -131,14 +132,34 @@ const SingUp = () => {
               />
             </div>
 
-            {/* <label htmlFor="dropzone-file" className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 text-gray-300 dark:text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                </svg>
+            {/* <label
+              htmlFor="dropzone-file"
+              className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-6 h-6 text-gray-300 dark:text-gray-500"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"
+                />
+              </svg>
 
-                <h2 className="mx-3 text-gray-400">Profile Photo</h2>
+              <h2 className="mx-3 text-gray-400">Profile Photo</h2>
 
-                <input id="dropzone-file" type="file" name='image' onChange={(e)=>setImageValue(e)} className="hidden" required/>
+              <input
+                id="dropzone-file"
+                type="file"
+                name="image"
+                className="hidden"
+                required
+              />
             </label> */}
 
             <div className="relative flex items-center mt-6">
@@ -228,16 +249,20 @@ const SingUp = () => {
             </button> */}
 
             <button
-               onClick={handleGoogleLogin}
-             className="button w-full flex justify-center mx-2"
+              onClick={handleGoogleLogin}
+              className="button w-full flex justify-center mx-2"
               id="button-5"
             >
               <div style={{ background: "purple" }} id="translate"></div>
-              <p className="flex items-center"> <svg className="w-4 h-4 mx-2 fill-current" viewBox="0 0 24 24">
-                <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"></path>
-              </svg>
-
-              <span className="hidden mx-2 sm:inline">Sign Up with Google</span></p>
+              <p className="flex items-center">
+                {" "}
+                <svg className="w-4 h-4 mx-2 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.24 10.285V14.4h6.806c-.275 1.765-2.056 5.174-6.806 5.174-4.095 0-7.439-3.389-7.439-7.574s3.345-7.574 7.439-7.574c2.33 0 3.891.989 4.785 1.849l3.254-3.138C18.189 1.186 15.479 0 12.24 0c-6.635 0-12 5.365-12 12s5.365 12 12 12c6.926 0 11.52-4.869 11.52-11.726 0-.788-.085-1.39-.189-1.989H12.24z"></path>
+                </svg>
+                <span className="hidden mx-2 sm:inline">
+                  Sign Up with Google
+                </span>
+              </p>
             </button>
           </div>
         </div>

@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
+import { toast } from "react-hot-toast";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 import "./BecameSeller.css";
 
-
-
 const BecameSeller = () => {
+  const { user } = useContext(AuthContext);
+  console.log(user);
+  const handleBecameSeller = (e) => {
+    e.preventDefault();
+
+    if (!user?.email) {
+      return toast.error("please login first");
+    }
+
+    const form = e.target;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const email = form.email.value;
+    const number = form.number.value;
+    const brand = form.brand.value;
+    const address = form.address.value;
+    const recoveryEmail = form.recoveryEmail.value;
+    const altPhone = form.altPhone.value;
+
+    const data = {
+      name: firstName + " " + lastName,
+      email,
+      number,
+      brand,
+      address,
+      recoveryEmail,
+      altPhone,
+    };
+    console.log(data);
+  };
   return (
     <>
       <div className="flex items-center justify-center mt-10">
@@ -11,7 +41,7 @@ const BecameSeller = () => {
           <div className="bg-gray-100 py-12 flex flex-wrap items-center justify-center">
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="https://i.ibb.co/DwNs7zG/Steps.png"
                 alt="step1"
                 className="w-full h-full"
@@ -27,7 +57,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="https://i.ibb.co/wNZ4nzy/Steps2.png"
                 alt="step2"
                 className="w-full h-full"
@@ -43,7 +73,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative md:mt-0 mt-4">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="https://i.ibb.co/c2k4Gbr/Steps3.png"
                 alt="step3"
                 className="w-full h-full"
@@ -59,7 +89,7 @@ const BecameSeller = () => {
             </div>
             <div className="w-52 h-16 relative lg:mt-0 mt-4">
               <img
-              loading="lazy"
+                loading="lazy"
                 src="https://i.ibb.co/XCdjrhm/Steps4.png"
                 alt="step4"
                 className="w-full h-full"
@@ -74,7 +104,7 @@ const BecameSeller = () => {
               </div>
             </div>
           </div>
-          <div className="xl:px-24">
+          <form onSubmit={handleBecameSeller} className="xl:px-24">
             <div className="px-5 py-4 bg-gray-100 rounded-lg flex items-center justify-between mt-7">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
@@ -137,9 +167,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="firstName"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="firstName"
                       placeholder="First name..."
+                      required
                     />
                   </div>
                   <div className="md:w-64 md:ml-12 md:mt-0 mt-4">
@@ -152,9 +184,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="lastName"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="lastName"
                       placeholder="Last name..."
+                      required
                     />
                   </div>
                 </div>
@@ -169,9 +203,12 @@ const BecameSeller = () => {
                     <input
                       type="email"
                       tabIndex="0"
+                      name="email"
+                      defaultValue={user?.email}
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="emailAddress"
                       placeholder="youremail@gmail.com"
+                      readOnly
                     />
                   </div>
                   <div className="md:w-64 md:ml-12 md:mt-0 mt-4">
@@ -184,9 +221,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="number"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="phone"
                       placeholder="123-1234567"
+                      required
                     />
                   </div>
                 </div>
@@ -216,9 +255,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="brand"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="password"
                       placeholder="Enter your Brand Name"
+                      required
                     />
                   </div>
                   <div className="md:w-64 md:ml-12 md:mt-0 mt-4">
@@ -226,14 +267,16 @@ const BecameSeller = () => {
                       className="text-sm leading-none text-gray-800"
                       id="securityCode"
                     >
-                      Security Code
+                      Address
                     </label>
                     <input
-                      type="name"
+                      type="text"
                       tabIndex="0"
+                      name="address"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
-                      aria-labelledby="securityCode"
-                      placeholder="Enter your security code"
+                      aria-labelledby=""
+                      placeholder="Enter your Address"
+                      required
                     />
                   </div>
                 </div>
@@ -248,9 +291,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="recoveryEmail"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="recoveryEmail"
                       placeholder="Your recovery email"
+                      required
                     />
                   </div>
                   <div className="md:w-64 md:ml-12 md:mt-0 mt-4">
@@ -263,9 +308,11 @@ const BecameSeller = () => {
                     <input
                       type="name"
                       tabIndex="0"
+                      name="altPhone"
                       className="w-full p-3 mt-3 bg-gray-100 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                       aria-labelledby="altPhone"
                       placeholder="Your alternate phone number"
+                      required
                     />
                   </div>
                 </div>
@@ -274,7 +321,7 @@ const BecameSeller = () => {
                                     </div> */}
 
                 {/* test  */}
-                <div className="wrapper">
+                <button type="submit" className="wrapper mx-auto">
                   <a className="cta mt-12">
                     <span className="font-serif span">SUBMIT</span>
                     <span className="span">
@@ -311,12 +358,12 @@ const BecameSeller = () => {
                       </svg>
                     </span>
                   </a>
-                </div>
+                </button>
 
                 {/* test  */}
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>
