@@ -9,6 +9,7 @@ import Deshboard from "../Components/Deshboard/Deshboard";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
 import TrackOrder from "../Components/TrackOrder/TrackOrder";
+import DeshBoardLayout from "../Outlet/DeshBoardLayout";
 import Main from "../Outlet/Main";
 
 const router = createBrowserRouter([
@@ -55,8 +56,14 @@ const router = createBrowserRouter([
   },
   {
     path: "deshboard",
-    element: <Deshboard />,
+    element: <DeshBoardLayout />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/deshboard",
+        element: <Deshboard />,
+      }
+    ]
   },
 ]);
 

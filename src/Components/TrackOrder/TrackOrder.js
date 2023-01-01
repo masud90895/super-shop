@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const TrackOrder = () => {
@@ -12,6 +13,46 @@ const TrackOrder = () => {
   }, [user?.email]);
 
   console.log(cart, user);
+
+  const handlePayment=()=>{
+    toast.custom((t) => (
+      <div
+        className={`${
+          t.visible ? 'animate-enter' : 'animate-leave'
+        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+      >
+        <div className="flex-1 w-0 p-4">
+          <div className="flex items-start">
+            <div className="flex-shrink-0 pt-0.5">
+              <img
+                className="h-10 w-10 rounded-full"
+                src={user?.photoURL}
+                alt=""
+              />
+            </div>
+            <div className="ml-3 flex-1">
+              <p className="text-base font-medium text-red-600">
+              Sorry ,  {user?.displayName}
+              </p>
+              <p className="mt-1 text-sm text-gray-500">
+                Payment Method is under maintenance <br />
+                As soon as possible we fixt it
+              </p>
+              
+            </div>
+          </div>
+        </div>
+        <div className="flex border-l border-gray-200">
+          <button
+            onClick={() => toast.dismiss(t.id)}
+            className="w-full border border-transparent rounded-none rounded-r-lg p-4 flex items-center justify-center text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    ))
+  }
 
   return (
     <div className="py-14 px-4 md:px-6 2xl:px-20 2xl:container 2xl:mx-auto">
@@ -117,10 +158,10 @@ const TrackOrder = () => {
                   )}
                 </p>
               </div>
-              <div className="button " id="button-5">
+              <button onClick={handlePayment} className="button " id="button-5">
                 <div style={{ background: "blue" }} id="translate"></div>
                 <p>Payment</p>
-              </div>
+              </button>
             </div>
             <div className="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6   ">
               <h3 className="text-xl font-semibold leading-5 text-gray-800">
