@@ -5,6 +5,10 @@ import AllProductsDetailes from "../Components/AllProducts/AllProductsDetailes";
 import Login from "../Components/Athentication/Login";
 import SingUp from "../Components/Athentication/SingUp";
 import BecameSeller from "../Components/BecameSeller/BecameSeller";
+import AllBuyer from "../Components/Deshboard/Admin/AllBuyer";
+import AllSeller from "../Components/Deshboard/Admin/AllSeller";
+import ReportedProducts from "../Components/Deshboard/Admin/ReportedProducts";
+import SellerRequest from "../Components/Deshboard/Admin/SellerRequest";
 import Deshboard from "../Components/Deshboard/Deshboard";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
@@ -62,6 +66,22 @@ const router = createBrowserRouter([
       {
         path: "/deshboard",
         element: <Deshboard />,
+      },
+      {
+        path : "allseller" ,
+        element : <AllSeller/>
+      },
+      {
+        path : "allbuyer",
+        element : <AllBuyer/>
+      },
+      {
+        path : "sellerrequest",
+        element : <SellerRequest/>
+      },
+      {
+        path : "reportedproduct",
+        element : <ReportedProducts/>
       }
     ]
   },

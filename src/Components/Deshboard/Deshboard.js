@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Deshboard = () => {
+  const {user} = useContext(AuthContext)
   return (
     <>
-    {/* <!-- component --> */}
 
 <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
     
@@ -41,7 +42,7 @@ const Deshboard = () => {
                         </defs>
                     </svg>
                     <div>
-                        <h5 className="text-xl text-gray-600 text-center">Global Activities</h5>
+                        <h5 className="text-xl text-gray-600 text-center">Today Activities</h5>
                         <div className="mt-2 flex justify-center gap-4">
                             <h3 className="text-3xl font-bold text-gray-700">$23,988</h3>
                             <div className="flex items-end gap-1 text-green-500">
@@ -56,7 +57,7 @@ const Deshboard = () => {
                     <table className="w-full text-gray-600">
                         <tbody>
                             <tr>
-                                <td className="py-2">Tailored ui</td>
+                                <td className="py-2">Smart Phone</td>
                                 <td className="text-gray-500">896</td>
                                 <td>
                                     <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +76,7 @@ const Deshboard = () => {
                                 </td>   
                             </tr>
                             <tr>
-                                <td className="py-2">Customize</td>
+                                <td className="py-2">Summer</td>
                                 <td className="text-gray-500">1200</td>
                                 <td>
                                     <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +119,7 @@ const Deshboard = () => {
             </div>
             <div>
                 <div className="h-full py-6 px-6 rounded-xl border border-gray-200 bg-white">
-                    <h5 className="text-xl text-gray-700">Downloads</h5>
+                    <h5 className="text-xl text-gray-700">Orders</h5>
                     <div className="my-8">
                         <h1 className="text-5xl font-bold text-gray-800">64,5%</h1>
                         <span className="text-gray-500">Compared to last week $13,988</span>
@@ -197,7 +198,7 @@ const Deshboard = () => {
                         </defs>
                     </svg>
                     <div className="mt-6">
-                        <h5 className="text-xl text-gray-700 text-center">Ask to customize</h5>
+                        <h5 className="text-xl text-gray-700 text-center">New orders</h5>
                         <div className="mt-2 flex justify-center gap-4">
                             <h3 className="text-3xl font-bold text-gray-700">28</h3>
                             <div className="flex items-end gap-1 text-green-500">
@@ -212,7 +213,7 @@ const Deshboard = () => {
                     <table className="mt-6 -mb-2 w-full text-gray-600">
                         <tbody>
                             <tr>
-                                <td className="py-2">Tailored ui</td>
+                                <td className="py-2">Women's</td>
                                 <td className="text-gray-500">896</td>
                                 <td>
                                     <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,7 +232,7 @@ const Deshboard = () => {
                                 </td>   
                             </tr>
                             <tr>
-                                <td className="py-2">Customize</td>
+                                <td className="py-2">Global Products</td>
                                 <td className="text-gray-500">1200</td>
                                 <td>
                                     <svg className="w-16 ml-auto" viewBox="0 0 68 21" fill="none" xmlns="http://www.w3.org/2000/svg">
