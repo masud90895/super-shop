@@ -68,22 +68,22 @@ const router = createBrowserRouter([
         element: <Deshboard />,
       },
       {
-        path : "allseller" ,
-        element : <AllSeller/>
+        path: "allseller",
+        element: <AllSeller />,
       },
       {
-        path : "allbuyer",
-        element : <AllBuyer/>
+        path: "allbuyer",
+        element: <AllBuyer />,
       },
       {
-        path : "sellerrequest",
-        element : <SellerRequest/>
+        path: "sellerrequest",
+        element: <SellerRequest />,
       },
       {
-        path : "reportedproduct",
-        element : <ReportedProducts/>
-      }
-    ]
+        path: "reportedproduct",
+        element: <ReportedProducts />,
+      },
+    ],
   },
 ]);
 

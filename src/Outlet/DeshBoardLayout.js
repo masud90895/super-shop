@@ -50,7 +50,7 @@ const DeshBoardLayout = () => {
                 <ul className="space-y-2 tracking-wide mt-8">
                   <li>
                     <NavLink
-                      href="dashboard"
+                      to="/deshboard"
                       aria-label="dashboard"
                       className={({isActive})=> `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white" : "text-gray-600"}`} 
                     >
@@ -475,7 +475,7 @@ const DeshBoardLayout = () => {
             </nav>
             {/* Navigation ends */}
             {/* Remove class [ h-64 ] when adding a card block */}
-            <div>
+            <div className="lg:mx-[80px]">
               {/* Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border */}
               <Outlet />
             </div>
