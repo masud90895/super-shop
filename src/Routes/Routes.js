@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import AboutUs from "../Components/AboutUs/AboutUs";
+import AddToCart from "../Components/AddToCart/AddToCart";
 import AllProducts from "../Components/AllProducts/AllProducts";
 import AllProductsDetailes from "../Components/AllProducts/AllProductsDetailes";
 import Login from "../Components/Athentication/Login";
@@ -60,6 +61,10 @@ const router = createBrowserRouter([
       {
         path : "/success",
         element : <SuccessPayment/>
+      },
+      {
+        path : "addtocart",
+        element : <AddToCart/>
       }
     ],
   },

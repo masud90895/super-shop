@@ -170,9 +170,11 @@ const Navbar = () => {
               <li>
                 <a>My Account</a>
               </li>
-              <li>
-                <a>My Wishlists</a>
-              </li>
+              <Link to="addtocart">
+                <li>
+                  <a>My Cart</a>
+                </li>
+              </Link>
               <li>
                 <a>My Orders</a>
               </li>
