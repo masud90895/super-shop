@@ -82,9 +82,12 @@ const Navbar = () => {
               </ul>
             )}
           </div>
-          <Link to="becameseller" className="hover:text-purple-900">
-            BECOME A SELLER
-          </Link>
+          {userEmail?.role === "user" && (
+            <Link to="becameseller" className="hover:text-purple-900">
+              BECOME A SELLER
+            </Link>
+          )}
+
           <Link className="hover:text-purple-900">CAMPAIGN</Link>
           {user?.email && (
             <Link to="../../trackOrder" className="hover:text-purple-900">
@@ -168,16 +171,18 @@ const Navbar = () => {
 
               <hr />
               <li>
-                <a>My Account</a>
+                <p>My Account</p>
               </li>
               <Link to="addtocart">
                 <li>
-                  <a>My Cart</a>
+                  <p>My Cart</p>
                 </li>
               </Link>
-              <Link to="trackOrder"><li>
-                <a>My Orders</a>
-              </li></Link>
+              <Link to="trackOrder">
+                <li>
+                  <p>My Orders</p>
+                </li>
+              </Link>
               {user?.email && (
                 <li className=" text-xl text-white bg-red-600 mb-2 rounded-xl">
                   <button onClick={handleLogOut}>Logout</button>

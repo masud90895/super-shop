@@ -20,7 +20,7 @@ const GlobalProducts = () => {
     <div id="global" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Global Products collections</h1>
-        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f] underline">
+        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white">
           View All
         </Link>
       </div>
@@ -40,7 +40,7 @@ const GlobalProducts = () => {
             <ButtonBack
               role="button"
               aria-label="slide backward"
-              className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer"
+              className="absolute z-30 left-0 ml-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer  w-[50px] rounded-[50%] p-4 border border-purple-600 "
               id="prev"
             >
               <svg
@@ -103,7 +103,7 @@ const GlobalProducts = () => {
             <ButtonNext
               role="button"
               aria-label="slide forward"
-              className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400"
+              className="absolute z-30 right-0 mr-8 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400  w-[50px] rounded-[50%] p-4 border border-purple-600 "
               id="next"
             >
               <svg
