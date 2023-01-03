@@ -12,6 +12,7 @@ import SellerRequest from "../Components/Deshboard/Admin/SellerRequest";
 import Deshboard from "../Components/Deshboard/Deshboard";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
+import SuccessPayment from "../Components/Payment/SuccessPayment";
 import TrackOrder from "../Components/TrackOrder/TrackOrder";
 import DeshBoardLayout from "../Outlet/DeshBoardLayout";
 import Main from "../Outlet/Main";
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path: "trackOrder",
         element: <TrackOrder />,
       },
+      {
+        path : "/success",
+        element : <SuccessPayment/>
+      }
     ],
   },
   {

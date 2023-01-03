@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Components/AuthProvider/AuthProvider";
 
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
