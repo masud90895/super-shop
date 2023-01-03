@@ -175,9 +175,9 @@ const Navbar = () => {
                   <a>My Cart</a>
                 </li>
               </Link>
-              <li>
+              <Link to="trackOrder"><li>
                 <a>My Orders</a>
-              </li>
+              </li></Link>
               {user?.email && (
                 <li className=" text-xl text-white bg-red-600 mb-2 rounded-xl">
                   <button onClick={handleLogOut}>Logout</button>
