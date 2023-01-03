@@ -6,6 +6,7 @@ import AllProductsDetailes from "../Components/AllProducts/AllProductsDetailes";
 import Login from "../Components/Athentication/Login";
 import SingUp from "../Components/Athentication/SingUp";
 import BecameSeller from "../Components/BecameSeller/BecameSeller";
+import AddNews from "../Components/Deshboard/Admin/AddNews";
 import AllBuyer from "../Components/Deshboard/Admin/AllBuyer";
 import AllSeller from "../Components/Deshboard/Admin/AllSeller";
 import ReportedProducts from "../Components/Deshboard/Admin/ReportedProducts";
@@ -59,13 +60,13 @@ const router = createBrowserRouter([
         element: <TrackOrder />,
       },
       {
-        path : "/success",
-        element : <SuccessPayment/>
+        path: "/success",
+        element: <SuccessPayment />,
       },
       {
-        path : "addtocart",
-        element : <AddToCart/>
-      }
+        path: "addtocart",
+        element: <AddToCart />,
+      },
     ],
   },
   {
@@ -92,6 +93,10 @@ const router = createBrowserRouter([
       {
         path: "reportedproduct",
         element: <ReportedProducts />,
+      },
+      {
+        path: "addnews",
+        element: <AddNews />,
       },
     ],
   },

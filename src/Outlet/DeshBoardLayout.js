@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider/AuthProvider";
+import { AiOutlineRollback } from 'react-icons/ai';
 import logo from "../Assists/logo.png"
 
 const DeshBoardLayout = () => {
@@ -16,7 +17,7 @@ const DeshBoardLayout = () => {
   },[user?.email])
 
 
-  console.log(user);
+  console.log(userRole);
   return (
     <>
       <div className="w-full h-full bg-gray-200">
@@ -75,9 +76,40 @@ const DeshBoardLayout = () => {
                       <span className="-mr-1 font-medium">Dashboard</span>
                     </NavLink>
                   </li>
+                 {
+                  userRole?.role === "admin" &&  <li>
+                  <NavLink
+                    to="allseller"
+                    className={({isActive})=> `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white" : "text-gray-600"}`} 
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        className="fill-current text-gray-300 group-hover:text-cyan-300"
+                        fillRule="evenodd"
+                        d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z"
+                        clipRule="evenodd"
+                      />
+                      <path
+                        className="fill-current text-gray-600 group-hover:text-cyan-600"
+                        d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"
+                      />
+                    </svg>
+                    <span className="group-hover:text-gray-700">All Seller</span>
+                  </NavLink>
+                </li>
+
+                 }
+                 {
+                  userRole?.role === "admin" &&
+                  
                   <li>
                     <NavLink
-                      to="allseller"
+                      to="addnews"
                       className={({isActive})=> `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white" : "text-gray-600"}`} 
                     >
                       <svg
@@ -87,19 +119,20 @@ const DeshBoardLayout = () => {
                         fill="currentColor"
                       >
                         <path
-                          className="fill-current text-gray-300 group-hover:text-cyan-300"
-                          fillRule="evenodd"
-                          d="M2 6a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1H8a3 3 0 00-3 3v1.5a1.5 1.5 0 01-3 0V6z"
-                          clipRule="evenodd"
+                          className="fill-current text-gray-600 group-hover:text-cyan-600"
+                          d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
                         />
                         <path
-                          className="fill-current text-gray-600 group-hover:text-cyan-600"
-                          d="M6 12a2 2 0 012-2h8a2 2 0 012 2v2a2 2 0 01-2 2H2h2a2 2 0 002-2v-2z"
+                          className="fill-current text-gray-300 group-hover:text-cyan-300"
+                          d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
                         />
                       </svg>
-                      <span className="group-hover:text-gray-700">All Seller</span>
+                      <span className="group-hover:text-gray-700">Add News</span>
                     </NavLink>
                   </li>
+                 }
+                 {
+                  userRole?.role === "admin" &&
                   <li>
                     <NavLink
                       to="allbuyer"
@@ -125,6 +158,10 @@ const DeshBoardLayout = () => {
                       <span className="group-hover:text-gray-700">All Buyer</span>
                     </NavLink>
                   </li>
+                 }
+                 {
+                  userRole?.role === "admin" &&
+                  
                   <li>
                     <NavLink
                       to="sellerrequest"
@@ -148,6 +185,9 @@ const DeshBoardLayout = () => {
                       <span className="group-hover:text-gray-700">Seller Request</span>
                     </NavLink>
                   </li>
+                 }
+                 {
+                  userRole?.role === "admin" &&
                   <li>
                     <NavLink
                       to="reportedproduct"
@@ -173,6 +213,59 @@ const DeshBoardLayout = () => {
                       <span className="group-hover:text-gray-700">Reported Products</span>
                     </NavLink>
                   </li>
+                 }
+                 {
+                  userRole?.role === "seller" && <li>
+                  <NavLink
+                    to="addproducts"
+                    className={({isActive})=> `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white" : "text-gray-600"}`} 
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        className="fill-current text-gray-300 group-hover:text-cyan-300"
+                        d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"
+                      />
+                      <path
+                        className="fill-current text-gray-600 group-hover:text-cyan-600"
+                        fillRule="evenodd"
+                        d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="group-hover:text-gray-700">Add Products</span>
+                  </NavLink>
+                </li>
+                 }
+                 {
+                  userRole?.role === "seller" &&  <li>
+                  <NavLink
+                    to="myproducts"
+                    className={({isActive})=> `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white" : "text-gray-600"}`} 
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        className="fill-current text-gray-600 group-hover:text-cyan-600"
+                        d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"
+                      />
+                      <path
+                        className="fill-current text-gray-300 group-hover:text-cyan-300"
+                        d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+                      />
+                    </svg>
+                    <span className="group-hover:text-gray-700">My Products</span>
+                  </NavLink>
+                </li>
+                 }
                 </ul>
               </div>
 
@@ -291,7 +384,7 @@ const DeshBoardLayout = () => {
           <div className="w-full">
             {/* Navigation starts */}
             <nav className="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white shadow  z-10 ">
-              <div className="hidden lg:flex w-full pr-6">
+              <div className="hidden lg:flex w-full pr-6 lg:mx-[80px]">
                 <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
                   <div className="relative w-full">
                     <div className="text-gray-500 absolute ml-4 inset-0 m-auto w-4 h-4">
@@ -388,6 +481,12 @@ const DeshBoardLayout = () => {
                                 <span className="text-sm ml-2">My Profile</span>
                               </div>
                             </li>
+                            <Link to="/"><li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
+                              <div className="flex items-center">
+                                <AiOutlineRollback/>
+                                <span className="text-sm ml-2">Go Back </span>
+                              </div>
+                            </li></Link>
                             <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
                               <div className="flex items-center">
                                 <svg
