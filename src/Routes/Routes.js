@@ -11,6 +11,8 @@ import AllSeller from "../Components/Deshboard/Admin/AllSeller";
 import ReportedProducts from "../Components/Deshboard/Admin/ReportedProducts";
 import SellerRequest from "../Components/Deshboard/Admin/SellerRequest";
 import Deshboard from "../Components/Deshboard/Deshboard";
+import AddProducts from "../Components/Deshboard/Seller/AddProducts";
+import MyProducts from "../Components/Deshboard/Seller/MyProducts";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
 import SuccessPayment from "../Components/Payment/SuccessPayment";
@@ -92,6 +94,14 @@ const router = createBrowserRouter([
       {
         path: "reportedproduct",
         element: <ReportedProducts />,
+      },
+      {
+        path: "addproducts",
+        element: <AddProducts />,
+      },
+      {
+        path: "myproducts",
+        element: <MyProducts />,
       }
     ],
   },
