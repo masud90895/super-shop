@@ -1,14 +1,35 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider/AuthProvider";
 import { AiOutlineRollback } from 'react-icons/ai';
 import logo from "../Assists/logo.png"
+import { toast } from "react-hot-toast";
 
 const DeshBoardLayout = () => {
-    const {user} = useContext(AuthContext)
+    const {user,logout} = useContext(AuthContext)
     const [userRole, setUserRole] = useState(false)
   const [show, setShow] = useState(false);
   const [profile, setProfile] = useState(false);
+  const navigete = useNavigate()
+
+  const handleLogOut = () => {
+    logout()
+      .then((result) => {
+        toast("LogOut!", {
+          icon: "👏",
+          style: {
+            borderRadius: "10px",
+            background: "#FF0000",
+            color: "#fff",
+          },
+        });
+        navigete("../login")
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
 
   useEffect(()=>{
     fetch(`http://localhost:5000/user?email=${user?.email}`)
@@ -244,7 +265,7 @@ const DeshBoardLayout = () => {
               </div>
 
               <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-                <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+                <button onClick={handleLogOut} className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-6 w-6"
@@ -343,7 +364,7 @@ const DeshBoardLayout = () => {
     </div>
 
     <div className="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <button className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
+        <button onClick={handleLogOut} className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
@@ -380,7 +401,7 @@ const DeshBoardLayout = () => {
                       </svg>
                     </div>
                     <input
-                      className="border border-gray-100 focus:outline-none focus:border-indigo-700 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2"
+                      className="border border-gray-100 focus:outline-none focus:border-purple-700 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2"
                       type="text"
                       placeholder="Search"
                     />
@@ -434,7 +455,7 @@ const DeshBoardLayout = () => {
                       <div className="rounded-full">
                         {profile ? (
                           <ul className="p-2 w-full border-r bg-white absolute rounded left-0 shadow mt-12 sm:mt-16 ">
-                            <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center">
+                            <li className="flex w-full justify-between text-gray-600 hover:text-purple-700 cursor-pointer items-center">
                               <div className="flex items-center">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -455,13 +476,13 @@ const DeshBoardLayout = () => {
                                 <span className="text-sm ml-2">My Profile</span>
                               </div>
                             </li>
-                            <Link to="/"><li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
+                            <Link to="/"><li className="flex w-full justify-between text-gray-600 hover:text-purple-700 cursor-pointer items-center mt-2">
                               <div className="flex items-center">
                                 <AiOutlineRollback/>
                                 <span className="text-sm ml-2">Go Back </span>
                               </div>
                             </li></Link>
-                            <li className="flex w-full justify-between text-gray-600 hover:text-indigo-700 cursor-pointer items-center mt-2">
+                            <li onClick={handleLogOut} className="flex w-full justify-between text-gray-600 hover:text-purple-700 cursor-pointer items-center mt-2">
                               <div className="flex items-center">
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
