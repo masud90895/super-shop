@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 const AllSeller = () => {
   const [seller, setSeller] = useState([]);
@@ -8,6 +9,10 @@ const AllSeller = () => {
       .then((res) => res.json())
       .then((data) => setSeller(data));
   }, []);
+  const handleDeleteSeller =()=>{
+    toast.error("We Disabled this features for security reasons")
+
+  }
   return (
     <div className="overflow-x-auto md:mt-[50px]">
       <table className="table w-full">
@@ -30,7 +35,7 @@ const AllSeller = () => {
                 <td>{sl.name}</td>
                 <td>{sl.role}</td>
                 <td>{sl.email}</td>
-                <td><button className="bg-red-600  text-white p-3 rounded-xl font-bold hover:bg-white hover:border hover:border-red-600 hover:text-black">Delete</button></td>
+                <td><button onClick={handleDeleteSeller} className="bg-red-600  text-white p-3 rounded-xl font-bold hover:bg-white hover:border hover:border-red-600 hover:text-black">Delete</button></td>
               </tr>
             ))
           ) : (

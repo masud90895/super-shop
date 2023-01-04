@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const ReportedProducts = () => {
@@ -9,6 +10,10 @@ const ReportedProducts = () => {
       .then((res) => res.json())
       .then((data) => setReportedProduct(data));
   }, []);
+
+  const handlereportedProduct = () => {
+    toast.error("This Featured is disabled for security reasons");
+  };
 
   console.log("reportedProduct", reportedProduct);
   return (
@@ -92,7 +97,7 @@ const ReportedProducts = () => {
                   </div>
                 </div>
 
-                <div style={{border : "1px solid red"}} className="button " id="button-5">
+                <div onClick={handlereportedProduct} style={{border : "1px solid red"}} className="button " id="button-5">
                   <div style={{backgroundColor : "red"}} id="translate"></div>
                   <p>Delete</p>
                 </div>

@@ -31,6 +31,7 @@ const BecameSeller = () => {
       address,
       recoveryEmail,
       altPhone,
+      role : "unknown"
     };
     fetch("http://localhost:5000/sellerRequest", {
       method: "POST",
