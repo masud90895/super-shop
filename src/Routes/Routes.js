@@ -15,6 +15,7 @@ import AddProducts from "../Components/Deshboard/Seller/AddProducts";
 import MyProducts from "../Components/Deshboard/Seller/MyProducts";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import Home from "../Components/HomePage/Home";
+import MyAccount from "../Components/MyAccount/MyAccount";
 import SuccessPayment from "../Components/Payment/SuccessPayment";
 import TrackOrder from "../Components/TrackOrder/TrackOrder";
 import DeshBoardLayout from "../Outlet/DeshBoardLayout";
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
         path: "addtocart",
         element: <AddToCart />,
       },
+      {
+        path : "myaccount",
+        element : <MyAccount />,
+      }
     ],
   },
   {

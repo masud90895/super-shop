@@ -33,7 +33,7 @@ const Navbar = () => {
         toast.error(err.message);
       });
   };
-
+  console.log(user);
   useEffect(() => {
     if (user?.email) {
       fetch(`http://localhost:5000/user?email=${user?.email}`)
@@ -170,9 +170,11 @@ const Navbar = () => {
               )}
 
               <hr />
-              <li>
-                <p>My Account</p>
-              </li>
+              {(user?.email || user?.uid) && (
+                <li>
+                  <Link to="../myaccount">My Account</Link>
+                </li>
+              )}
               <Link to="addtocart">
                 <li>
                   <p>My Cart</p>
@@ -270,25 +272,30 @@ const Navbar = () => {
                       Home
                     </Link>
                   </li>
-                  <li className="cursor-pointer text-gray-600   text-sm leading-3 tracking-normal py-3 px-3 flex items-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="icon icon-tabler icon-tabler-clipboard"
-                      width={16}
-                      height={16}
-                      viewBox="0 0 24 24"
-                      strokeWidth="1.5"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                  {(user?.email || user?.uid) && (
+                    <Link
+                      to="../myaccount"
+                      className="cursor-pointer text-gray-600   text-sm leading-3 tracking-normal py-3 px-3 flex items-center"
                     >
-                      <path stroke="none" d="M0 0h24v24H0z" />
-                      <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
-                      <rect x={9} y={3} width={6} height={4} rx={2} />
-                    </svg>
-                    <span className="ml-2 font-normal">My Account</span>
-                  </li>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-clipboard"
+                        width={16}
+                        height={16}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <path d="M9 5H7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2V7a2 2 0 0 0 -2 -2h-2" />
+                        <rect x={9} y={3} width={6} height={4} rx={2} />
+                      </svg>
+                      <span className="ml-2 font-normal">My Account</span>
+                    </Link>
+                  )}
 
                   <li className="cursor-pointer text-gray-600  text-sm leading-3 tracking-normal py-3 hover:bg-gray-100 px-3 flex items-center">
                     <svg
