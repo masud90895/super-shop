@@ -12,7 +12,7 @@ const MobailCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/smartphone")
+    fetch("https://supershop-server.vercel.app/smartphone")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
@@ -20,7 +20,12 @@ const MobailCollection = () => {
     <div id="mobail" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Smart Phone Collection</h1>
-        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white">View All</Link>
+        <Link
+          to={`/${deals[0]?.collections}`}
+          className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white"
+        >
+          View All
+        </Link>
       </div>
       <div className="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4">
         {/* Carousel for desktop and large size devices */}
@@ -65,7 +70,7 @@ const MobailCollection = () => {
                 >
                   {deals.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -165,7 +170,7 @@ const MobailCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -265,7 +270,7 @@ const MobailCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"

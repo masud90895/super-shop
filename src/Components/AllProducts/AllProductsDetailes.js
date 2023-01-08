@@ -45,7 +45,7 @@ const AllProductsDetailes = () => {
       quantity: quantity,
       email: user?.email,
     };
-    fetch("http://localhost:5000/addToCart", {
+    fetch("https://supershop-server.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -109,7 +109,7 @@ const AllProductsDetailes = () => {
       confirmButtonText: "Yes, Report it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/report/${product?._id}`, {
+        fetch(`https://supershop-server.vercel.app/report/${product?._id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -146,7 +146,7 @@ const AllProductsDetailes = () => {
       number,
     };
     console.log(productCart);
-    fetch("http://localhost:5000/buyProducts", {
+    fetch("https://supershop-server.vercel.app/buyProducts", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -155,7 +155,7 @@ const AllProductsDetailes = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-       window.location.replace(result?.url)
+        window.location.replace(result?.url);
       });
   };
 

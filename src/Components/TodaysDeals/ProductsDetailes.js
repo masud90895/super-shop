@@ -21,7 +21,7 @@ const ProductsDetailes = ({ products }) => {
       time: date,
       question,
     };
-    fetch(`http://localhost:5000/question/${products?._id}`, {
+    fetch(`https://supershop-server.vercel.app/question/${products?._id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -107,7 +107,10 @@ const ProductsDetailes = ({ products }) => {
             ) : (
               <div>
                 {products?.question?.map((qr, i) => (
-                  <div key={i} className="border-2 border-purple-300 rounded-md my-2 p-3">
+                  <div
+                    key={i}
+                    className="border-2 border-purple-300 rounded-md my-2 p-3"
+                  >
                     <div className="text-2xl py-4 ">
                       <h1>{qr.question}</h1>
                     </div>

@@ -5,14 +5,13 @@ const AllSeller = () => {
   const [seller, setSeller] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allSeller")
+    fetch("https://supershop-server.vercel.app/allSeller")
       .then((res) => res.json())
       .then((data) => setSeller(data));
   }, []);
-  const handleDeleteSeller =()=>{
-    toast.error("We Disabled this features for security reasons")
-
-  }
+  const handleDeleteSeller = () => {
+    toast.error("We Disabled this features for security reasons");
+  };
   return (
     <div className="overflow-x-auto md:mt-[50px]">
       <table className="table w-full">
@@ -29,13 +28,20 @@ const AllSeller = () => {
         <tbody>
           {/* <!-- row 1 --> */}
           {seller.length > 0 ? (
-            seller.map((sl,i) => (
+            seller.map((sl, i) => (
               <tr key={sl._id} className="hover">
-                <th>{i+1}</th>
+                <th>{i + 1}</th>
                 <td>{sl.name}</td>
                 <td>{sl.role}</td>
                 <td>{sl.email}</td>
-                <td><button onClick={handleDeleteSeller} className="bg-red-600  text-white p-3 rounded-xl font-bold hover:bg-white hover:border hover:border-red-600 hover:text-black">Delete</button></td>
+                <td>
+                  <button
+                    onClick={handleDeleteSeller}
+                    className="bg-red-600  text-white p-3 rounded-xl font-bold hover:bg-white hover:border hover:border-red-600 hover:text-black"
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))
           ) : (

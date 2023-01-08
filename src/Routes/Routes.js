@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://supershop-server.vercel.app/product/${params.id}`),
         element: <AllProductsDetailes />,
       },
       {
@@ -70,9 +70,9 @@ const router = createBrowserRouter([
         element: <AddToCart />,
       },
       {
-        path : "myaccount",
-        element : <MyAccount />,
-      }
+        path: "myaccount",
+        element: <MyAccount />,
+      },
     ],
   },
   {
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
       {
         path: "myproducts",
         element: <MyProducts />,
-      }
+      },
     ],
   },
 ]);

@@ -12,7 +12,7 @@ const WomenCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/women")
+    fetch("https://supershop-server.vercel.app/women")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

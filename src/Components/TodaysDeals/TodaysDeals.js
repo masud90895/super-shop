@@ -12,18 +12,21 @@ const TodaysDeals = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/todayDeals")
+    fetch("https://supershop-server.vercel.app/todayDeals")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
 
-  console.log("today",deals);
+  console.log("today", deals);
 
   return (
     <div id="todays" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Today's Deals</h1>
-        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f] border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white">
+        <Link
+          to={`/${deals[0]?.collections}`}
+          className="text-[#92278f] border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white"
+        >
           View All
         </Link>
       </div>

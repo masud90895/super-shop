@@ -12,7 +12,7 @@ const GlobalProducts = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/globalProducts")
+    fetch("https://supershop-server.vercel.app/globalProducts")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
@@ -20,7 +20,10 @@ const GlobalProducts = () => {
     <div id="global" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Global Products collections</h1>
-        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white">
+        <Link
+          to={`/${deals[0]?.collections}`}
+          className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white"
+        >
           View All
         </Link>
       </div>

@@ -12,7 +12,7 @@ const SummerCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/summer")
+    fetch("https://supershop-server.vercel.app/summer")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

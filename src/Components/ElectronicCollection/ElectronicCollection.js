@@ -12,7 +12,7 @@ const ElectronicCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/electronic")
+    fetch("https://supershop-server.vercel.app/electronic")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
@@ -20,7 +20,10 @@ const ElectronicCollection = () => {
     <div id="electronic" className="container mx-auto my-20 border-2 p-2">
       <div className="flex justify-between">
         <h1 className="text-2xl font-bold">Electronic collections</h1>
-        <Link to={`/${deals[0]?.collections}`} className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white">
+        <Link
+          to={`/${deals[0]?.collections}`}
+          className="text-[#92278f]  border border-[#92278f] p-1 rounded hover:bg-[#92278f] hover:text-white"
+        >
           View All
         </Link>
       </div>
@@ -67,7 +70,7 @@ const ElectronicCollection = () => {
                 >
                   {deals.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -167,7 +170,7 @@ const ElectronicCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
@@ -267,7 +270,7 @@ const ElectronicCollection = () => {
                 >
                   {deals?.map((deal, i) => (
                     <Slide key={deal._id} index={i}>
-                     <Link to={`product/${deal._id}`}>
+                      <Link to={`product/${deal._id}`}>
                         <div className="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
                           <div
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"

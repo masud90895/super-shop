@@ -31,9 +31,9 @@ const BecameSeller = () => {
       address,
       recoveryEmail,
       altPhone,
-      role : "unknown"
+      role: "unknown",
     };
-    fetch("http://localhost:5000/sellerRequest", {
+    fetch("https://supershop-server.vercel.app/sellerRequest", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -47,7 +47,7 @@ const BecameSeller = () => {
           return toast.error(result?.message);
         }
         toast.success(result.message);
-        form.reset()
+        form.reset();
       });
   };
   return (
