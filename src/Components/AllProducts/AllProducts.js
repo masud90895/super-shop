@@ -28,7 +28,7 @@ const AllProducts = () => {
         </p>
         <hr className=" w-full bg-gray-200 my-6" />
 
-
+       
 
         <div className=" flex justify-between items-center">
           <div className=" flex space-x-3 justify-center items-center">
