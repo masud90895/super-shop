@@ -11,28 +11,32 @@ import Category from './Category';
 import MobailApp from './MobailApp';
 import TodaysDeals from '../TodaysDeals/TodaysDeals';
 import Partner from '../Partner/Partner';
+import Delivery from '../Delivary/Delivary';
 
 const Home = () => {
-    const categories =[
-        <TodaysDeals/>,
-            <MobailCollection/>,
-            <SummerCollection/>,
-            <ElectronicCollection/>,
-            <WomenCollection/>,
-            <LadiesBagCollection/>,
-            <GlobalProducts/>,
-            <ShareeCollection/>,
-            <Partner/>,
-            <MobailApp/>
+    const categories = [
+        <TodaysDeals />,
+        <MobailCollection />,
+        <SummerCollection />,
+        <ElectronicCollection />,
+        <WomenCollection />,
+        <LadiesBagCollection />,
+        <GlobalProducts />,
+        <ShareeCollection />,
+        <Delivery />,
+        <Partner />,
+        <MobailApp />
     ]
     return (
         <div>
-            <Banner/>
-            <Category/>
+            <Banner />
+            <Category />
+
             {
-                categories?.map((category,i)=> <div key={i}>{category}</div>)
+                categories?.map((category, i) => <div key={i}>{category}</div>)
             }
             
+
         </div>
     );
 };

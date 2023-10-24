@@ -21,7 +21,7 @@ const Banner = () => {
       <Carousel showThumbs={false} autoPlay infiniteLoop className="w-[90%]  mt-10 mx-auto">
         {slider.map((sl, i) => (
           <div className="lg:h-[500px]" key={i}>
-            <img loading="lazy" className="h-full" src={sl} />
+            <img loading="lazy" className="h-full" src={sl} alt="" />
           </div>
         ))}
       </Carousel>
@@ -32,20 +32,20 @@ const Banner = () => {
         </div>
         <Marquee gradient={false} className="bg-gray-100">
           <h1 className="mr-16">
-          • নতুন রুপে,নতুন অঙ্গীকে সুপার-শপ
+            • নতুন রুপে,নতুন অঙ্গীকে সুপার-শপ
           </h1>
-          
+
           <h1 className="mr-16">
-           • ঠাকুরগাঁও গৃহস্থ বাড়ির খাসির মাংস এখন সুপার-শপে!
-          </h1>
-          <h1 className="mr-16">
-           • সুপার শপে পাবেন সকল প্রকার পণ্য
+            • ঠাকুরগাঁও গৃহস্থ বাড়ির খাসির মাংস এখন সুপার-শপে!
           </h1>
           <h1 className="mr-16">
-           • আমাদের রয়েছে সারা দেশে ১০ টির ও বেশি আউটলেট
+            • সুপার শপে পাবেন সকল প্রকার পণ্য
           </h1>
           <h1 className="mr-16">
-           • নতুন গ্রাহকদের জন্য রয়েছে ৫০% Discounts
+            • আমাদের রয়েছে সারা দেশে ১০ টির ও বেশি আউটলেট
+          </h1>
+          <h1 className="mr-16">
+            • নতুন গ্রাহকদের জন্য রয়েছে ৫০% Discounts
           </h1>
         </Marquee>
       </div>
