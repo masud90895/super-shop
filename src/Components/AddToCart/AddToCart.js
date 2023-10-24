@@ -1,25 +1,39 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, } from "react";
 import { toast } from "react-hot-toast";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { useGetAllCartDataQuery } from "../../Redux/api/cartApi";
+import Skeleton from "../Loader/Skeleton";
 
 const AddToCart = () => {
   const time = new Date().toLocaleString();
   const { user } = useContext(AuthContext);
-  const [cart, setCart] = useState([]);
-  useEffect(() => {
-    fetch(`https://supershop-server.vercel.app/addToCart?email=${user?.email}`)
-      .then((res) => res.json())
-      .then((data) => setCart(data));
-  }, [user?.email]);
+  // const [cart, setCart] = useState([]);
+  // useEffect(() => {
+  //   fetch(`https://supershop-server.vercel.app/addToCart?email=${user?.email}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setCart(data));
+  // }, [user?.email]);
 
-  console.log(cart, user);
+
+  const { data: cart, isLoading } = useGetAllCartDataQuery(user?.email);
+
+  if (isLoading) {
+
+    return <div className="h-screen mx-auto mt-[100px]">
+
+      <Skeleton />
+    </div>
+  }
+
+
+
+
 
   const handlePayment = () => {
     toast.custom((t) => (
       <div
-        className={`${
-          t.visible ? "animate-enter" : "animate-leave"
-        } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+        className={`${t.visible ? "animate-enter" : "animate-leave"
+          } max-w-md w-full bg-white shadow-lg rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
       >
         <div className="flex-1 w-0 p-4">
           <div className="flex items-start">
