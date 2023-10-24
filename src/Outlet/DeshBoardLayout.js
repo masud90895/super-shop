@@ -10,7 +10,7 @@ const DeshBoardLayout = () => {
   const [userRole, setUserRole] = useState(false);
   const [show, setShow] = useState(false);
   const [profile, setProfile] = useState(false);
-  const navigete = useNavigate();
+  const navigate = useNavigate();
 
   const handleLogOut = () => {
     logout()
@@ -23,7 +23,7 @@ const DeshBoardLayout = () => {
             color: "#fff",
           },
         });
-        navigete("../login");
+        navigate("../login");
       })
       .catch((err) => {
         console.log(err);

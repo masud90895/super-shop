@@ -13,7 +13,7 @@ import TodaysDeals from '../TodaysDeals/TodaysDeals';
 import Partner from '../Partner/Partner';
 
 const Home = () => {
-    const categorys =[
+    const categories =[
         <TodaysDeals/>,
             <MobailCollection/>,
             <SummerCollection/>,
@@ -30,7 +30,7 @@ const Home = () => {
             <Banner/>
             <Category/>
             {
-                categorys?.map((category,i)=> <div key={i}>{category}</div>)
+                categories?.map((category,i)=> <div key={i}>{category}</div>)
             }
             
         </div>
