@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLoaderData, useLocation, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const AllProducts = () => {
   const [deals, setDeals] = useState([]);
 
   const params = useParams();
-  console.log(deals);
 
   useEffect(() => {
     fetch(
@@ -14,6 +13,8 @@ const AllProducts = () => {
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, [params?.category]);
+
+
   return (
     <div className=" 2xl:container 2xl:mx-auto">
       <div className=" bg-gray-50 text-center lg:py-10 md:py-8 py-6">
@@ -26,6 +27,8 @@ const AllProducts = () => {
           Home / Shop by Category / {deals[0]?.collections}
         </p>
         <hr className=" w-full bg-gray-200 my-6" />
+
+
 
         <div className=" flex justify-between items-center">
           <div className=" flex space-x-3 justify-center items-center">
