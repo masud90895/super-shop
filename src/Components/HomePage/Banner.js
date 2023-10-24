@@ -3,18 +3,21 @@ import Marquee from "react-fast-marquee";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import img1 from "../../Assists/slider1.webp";
-import img2 from "../../Assists/slider2.webp";
-import img3 from "../../Assists/slider3.webp";
-import img4 from "../../Assists/slider4.webp";
-import img5 from "../../Assists/slider5.webp";
-import img6 from "../../Assists/slider6.webp";
-import img7 from "../../Assists/slider7.webp";
-import img8 from "../../Assists/slider8.webp";
+import img1 from "../../Assists/1.jpg";
+import img2 from "../../Assists/2.jpg";
+import img3 from "../../Assists/3.jpg";
+import img4 from "../../Assists/4.jpg";
+import img5 from "../../Assists/5.jpg";
+import img6 from "../../Assists/6.jpg";
+import img7 from "../../Assists/7.jpg";
+import img8 from "../../Assists/8.jpg";
+import img9 from "../../Assists/9.jpg";
+import img10 from "../../Assists/10.webp";
+import img11 from "../../Assists/11.webp";
 import "./Banner.css";
 
 const Banner = () => {
-  const slider = [img1, img2, img3, img4, img5, img6, img7, img8];
+  const slider = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
 
   return (
     <>
