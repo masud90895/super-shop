@@ -85,10 +85,10 @@ const MobailCollection = () => {
 
                             <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
                               <h1 className="font-bold text-gray-800 dark:text-gray-200">
-                                ${deal.price}
+                                ৳{deal.price}
                               </h1>
                               <h1>
-                                <del>${deal.mainPrice} </del>{" "}
+                                <del>৳{deal.mainPrice} </del>{" "}
                                 <span className="bg-[#ff7a01] text-white ml-3 p-1 rounded-md font-bold">
                                   {" "}
                                   {deal.discount}% OFF
@@ -185,10 +185,10 @@ const MobailCollection = () => {
 
                             <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
                               <h1 className="font-bold text-gray-800 dark:text-gray-200">
-                                ${deal.price}
+                                ৳{deal.price}
                               </h1>
                               <h1>
-                                <del>${deal.mainPrice} </del>{" "}
+                                <del>৳{deal.mainPrice} </del>{" "}
                                 <span className="bg-[#ff7a01] text-white ml-3 p-1 rounded-md font-bold">
                                   {" "}
                                   {deal.discount}% OFF
@@ -285,10 +285,10 @@ const MobailCollection = () => {
 
                             <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
                               <h1 className="font-bold text-gray-800 dark:text-gray-200">
-                                ${deal.price}
+                                ৳{deal.price}
                               </h1>
                               <h1>
-                                <del>${deal.mainPrice} </del>{" "}
+                                <del>৳{deal.mainPrice} </del>{" "}
                                 <span className="bg-[#ff7a01] text-white ml-3 p-1 rounded-md font-bold">
                                   {" "}
                                   {deal.discount}% OFF

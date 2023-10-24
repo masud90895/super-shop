@@ -28,7 +28,7 @@ const AllProducts = () => {
         </p>
         <hr className=" w-full bg-gray-200 my-6" />
 
-       
+
 
         <div className=" flex justify-between items-center">
           <div className=" flex space-x-3 justify-center items-center">
@@ -136,9 +136,9 @@ const AllProducts = () => {
                   </div>
                   <div className=" py-4">
                     <div className="flex items-center mt-2">
-                      <h3 className=" text-xl font-semibold">${deal.price}</h3>
+                      <h3 className=" text-xl font-semibold">৳{deal.price}</h3>
                       <del className=" text- font-semibold ml-5 text-red-600">
-                        /${deal.mainPrice}
+                        /৳{deal.mainPrice}
                       </del>
                     </div>
                   </div>

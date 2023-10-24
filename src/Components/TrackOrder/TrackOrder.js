@@ -49,7 +49,7 @@ const TrackOrder = () => {
                 </div>
                 <div>
                   <h1>
-                    Total : $ <span>{ct.price}</span>
+                    Total : ৳ <span>{ct.price}</span>
                   </h1>
                 </div>
               </div>
@@ -106,7 +106,7 @@ const TrackOrder = () => {
                       </h1>
                     </div>
                   </div>
-                  <h1>${ct.price}</h1>
+                  <h1>৳{ct.price}</h1>
                   <div>
                     <h1 className="flex text-lg text-[#27c8e4] items-center gap-1">
                       RETURN/REFUND{" "}
