@@ -33,7 +33,7 @@ const Navbar = () => {
         toast.error(err.message);
       });
   };
-  console.log(user);
+  
   useEffect(() => {
     if (user?.email) {
       fetch(`https://supershop-server.vercel.app/user?email=${user?.email}`)
