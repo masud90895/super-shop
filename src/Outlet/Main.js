@@ -4,15 +4,15 @@ import ButtomContactButton from "../Components/Shared/ButtomContactButton";
 import Footer from "../Components/Shared/Footer";
 import Navbar from "../Components/Shared/Navbar";
 
-console.log("object");
+
 
 const Main = () => {
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       <Outlet />
       <Footer />
-      <ButtomContactButton/>
+      <ButtomContactButton />
     </div>
   );
 };
