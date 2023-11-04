@@ -8,7 +8,7 @@ const AllProduct = () => {
   const [deleteProduct, { isLoading }] = useDeleteProductMutation();
 
   const handleDeleteBuyer = (id) => {
-    // toast.error('We Disabled this features for security reasons')
+    toast.error('We Disabled this features for security reasons')
     deleteProduct(id).unwrap().then(() => {
       toast.success('Product Deleted Successfully')
     }).catch((err) => {
@@ -28,7 +28,7 @@ const AllProduct = () => {
             <th>Price</th>
             <th>Store Name</th>
             <th>Category</th>
-            <th>Description</th>
+            {/* <th>Description</th> */}
 
             <th></th>
           </tr>
@@ -47,11 +47,11 @@ const AllProduct = () => {
                 }</td>
                 <td>{sl?.storeName}</td>
                 <td>{sl?.collections}</td>
-                <td dangerouslySetInnerHTML={
+                {/* <td dangerouslySetInnerHTML={
                   {
                     __html: sl?.description?.length > 50 ? sl?.description?.slice(0, 50) + '...' : sl?.description
                   }
-                } />
+                } /> */}
                 {
                   isLoading ? <td>Loading...</td> : <td>
                     <button

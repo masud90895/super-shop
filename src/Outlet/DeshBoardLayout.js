@@ -72,7 +72,7 @@ const DeshBoardLayout = () => {
                 </div>
 
                 <ul className="space-y-2 tracking-wide mt-8">
-                  <li>
+                  {/* <li>
                     <NavLink
                       to="/deshboard"
                       aria-label="dashboard"
@@ -103,7 +103,7 @@ const DeshBoardLayout = () => {
                       </svg>
                       <span className="-mr-1 font-medium">Dashboard</span>
                     </NavLink>
-                  </li>
+                  </li> */}
 
                   {userRole?.role === "admin" && (
                     <li>
@@ -201,6 +201,42 @@ const DeshBoardLayout = () => {
                         </svg>
                         <span className="group-hover:text-gray-700">
                           Seller Request
+                        </span>
+                      </NavLink>
+                    </li>
+                  )}
+                  {userRole?.role === "admin" && (
+                    <li>
+                      <NavLink
+                        to="products"
+                        className={({ isActive }) =>
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
+                          }`
+                        }
+                      >
+                        <svg
+                          className="-ml-1 h-6 w-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
+                            className="fill-current text-cyan-400  "
+                          ></path>
+                          <path
+                            d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
+                            className="fill-current text-cyan-200 group-hover:text-cyan-300"
+                          ></path>
+                          <path
+                            d="M13 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-1Z"
+                            className="fill-current group-hover:text-sky-300"
+                          ></path>
+                        </svg>
+
+                        <span className="group-hover:text-gray-700">
+                          All Products
                         </span>
                       </NavLink>
                     </li>
@@ -639,7 +675,7 @@ const DeshBoardLayout = () => {
                     >
                       <div className="rounded-full">
                         {profile ? (
-                          <ul className="p-2 w-[150px] border-r bg-white absolute rounded left-0 shadow mt-12 sm:mt-16 ">
+                          <ul className="p-2 w-[150px] border-r bg-white absolute rounded left-0 shadow mt-12 sm:mt-16 z-50">
                             <li className="flex w-full justify-between text-gray-600 hover:text-purple-700 cursor-pointer items-center">
                               <div className="flex items-center">
                                 <svg
