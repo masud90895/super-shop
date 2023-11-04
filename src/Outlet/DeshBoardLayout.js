@@ -32,7 +32,7 @@ const DeshBoardLayout = () => {
   };
 
   useEffect(() => {
-    fetch(`https://supershop-server.vercel.app/user?email=${user?.email}`)
+    fetch(`https://super-shop-server.vercel.app/user?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserRole(data))
       .catch((err) => console.log(err));

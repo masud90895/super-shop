@@ -28,7 +28,7 @@ const SingUp = () => {
               role: "user",
               email,
             };
-            fetch("https://supershop-server.vercel.app/user", {
+            fetch("https://super-shop-server.vercel.app/user", {
               method: "POST",
               headers: {
                 "content-type": "application/json",
@@ -66,7 +66,7 @@ const SingUp = () => {
         console.log(result);
 
         if (result?.user?.email) {
-          fetch("https://supershop-server.vercel.app/user", {
+          fetch("https://super-shop-server.vercel.app/user", {
             method: "POST",
             headers: {
               "content-type": "application/json",

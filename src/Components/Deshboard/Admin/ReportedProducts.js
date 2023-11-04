@@ -6,7 +6,7 @@ const ReportedProducts = () => {
   const [reportedProduct, setReportedProduct] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/report")
+    fetch("https://super-shop-server.vercel.app/report")
       .then((res) => res.json())
       .then((data) => setReportedProduct(data));
   }, []);

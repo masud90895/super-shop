@@ -6,14 +6,18 @@ import ReactMultiSelect from '../../ReactSelector/ReactSelector.tsx';
 import { AuthContext } from '../../AuthProvider/AuthProvider.js';
 
 const collectionsData = [
-  { value: '1', label: 'todayDeals' },
-  { value: '2', label: 'summer' },
-  { value: '3', label: 'electronic' },
-  { value: '4', label: 'women' },
-  { value: '5', label: 'ladiesBag' },
-  { value: '6', label: 'globalProducts' },
-  { value: '7', label: 'sharee' },
-  { value: '8', label: 'smartphone' },
+  {
+    value: '1', label: "Today'sDeals"
+  },
+  { value: '2', label: 'Summercollections' },
+  { value: '3', label: 'Electronics' },
+  {
+    value: '4', label: "Women'sCollection"
+  },
+  { value: '5', label: 'LadiesBagCollections' },
+  { value: '6', label: 'GlobalProducts' },
+  { value: '7', label: "Sharee'sCollection" },
+  { value: '8', label: 'SmartPhoneCollection' },
 
 
 
@@ -24,6 +28,10 @@ const collectionsData = [
 
 
 const AddProducts = () => {
+  const [isLoading, setIsLoading] = React.useState(false);
+
+  // post product
+
 
   // get user
   const { user } = useContext(AuthContext);
@@ -32,28 +40,34 @@ const AddProducts = () => {
   const name = user?.email?.split('@')[0];
 
 
+
+
   const {
     register,
     handleSubmit,
     formState: { errors },
     setValue,
-    watch
+    watch,
+    reset
   } = useForm()
 
 
   const watchData = watch();
-  // console.log(watchData);
 
   const onSubmit = (data) => {
     if (!data?.collections) {
       alert('Please Select Category')
       return;
     }
+    setIsLoading(true);
 
     data.collections = data?.collections?.name;
     data.question = [];
     data.sellerName = user?.displayName ?? name;
     data.sellerEmail = user?.email;
+    // mainPrice = data.price - (data.discount)%
+    data.mainPrice = (data.price - (data.price * data.discount) / 100).toString();
+
 
     // upload image
 
@@ -69,7 +83,28 @@ const AddProducts = () => {
       .then(async (image) => {
         await (data.image = image?.data?.url);
 
-        console.log(data);
+        // post product
+        fetch(`https://super-shop-server.vercel.app/products`, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert('Product Added Successfully')
+            setValue('name', '')
+            setValue('collections', '')
+            setValue('price', '')
+            setValue('discount', '')
+            setValue('storeName', '')
+            setValue('image', '')
+            reset();
+            setIsLoading(false);
+          })
+
+
 
 
       }
@@ -238,12 +273,23 @@ const AddProducts = () => {
 
 
 
+
           {/* <input type="submit" value="Submit" className='' /> */}
 
-          <button type="submit" className="button w-[300px] mt-[20px]" id="button-5">
+          {
+            isLoading ? <button type="button" className="button w-[300px] mt-[20px]" id="button-5" disabled>
+              <div id="translate"></div>
+              <p> Loading... <span className="loading loading-spinner text-primary"></span></p>
+            </button> : <button type="submit" className="button w-[300px] mt-[20px]" id="button-5">
+              <div id="translate"></div>
+              <p>Submit</p>
+            </button>
+          }
+
+          {/* <button type="submit" className="button w-[300px] mt-[20px]" id="button-5">
             <div id="translate"></div>
             <p>Submit</p>
-          </button>
+          </button> */}
 
 
 

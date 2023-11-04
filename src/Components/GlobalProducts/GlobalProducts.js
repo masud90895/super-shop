@@ -12,7 +12,7 @@ const GlobalProducts = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/globalProducts")
+    fetch("https://super-shop-server.vercel.app/globalProducts")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

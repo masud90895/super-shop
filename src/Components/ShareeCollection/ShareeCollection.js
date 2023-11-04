@@ -12,7 +12,7 @@ const ShareeCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/sharee")
+    fetch("https://super-shop-server.vercel.app/sharee")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

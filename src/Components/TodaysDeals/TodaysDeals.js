@@ -12,7 +12,7 @@ const TodaysDeals = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/todayDeals")
+    fetch("https://super-shop-server.vercel.app/todayDeals")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);
@@ -81,7 +81,7 @@ const TodaysDeals = () => {
                           ></div>
                           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
                             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
-                              {deal.name.length > 20
+                              {deal?.name?.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>
@@ -137,7 +137,7 @@ const TodaysDeals = () => {
           isPlaying={true}
           naturalSlideWidth={100}
           isIntrinsicHeight={true}
-          totalSlides={deals.length}
+          totalSlides={deals?.length}
           visibleSlides={3}
           step={1}
           infinite={true}
@@ -181,7 +181,7 @@ const TodaysDeals = () => {
                           ></div>
                           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
                             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
-                              {deal.name.length > 20
+                              {deal?.name?.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>
@@ -281,7 +281,7 @@ const TodaysDeals = () => {
                           ></div>
                           <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
                             <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
-                              {deal.name.length > 20
+                              {deal?.name?.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>

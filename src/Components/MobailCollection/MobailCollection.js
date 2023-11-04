@@ -12,7 +12,7 @@ const MobailCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/smartphone")
+    fetch("https://super-shop-server.vercel.app/smartphone")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

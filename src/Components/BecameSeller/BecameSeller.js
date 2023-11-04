@@ -33,7 +33,7 @@ const BecameSeller = () => {
       altPhone,
       role: "unknown",
     };
-    fetch("https://supershop-server.vercel.app/sellerRequest", {
+    fetch("https://super-shop-server.vercel.app/sellerRequest", {
       method: "POST",
       headers: {
         "content-type": "application/json",

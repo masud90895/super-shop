@@ -10,7 +10,7 @@ const TrackOrder = () => {
   const { user } = useContext(AuthContext);
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    fetch(`https://supershop-server.vercel.app/tackOrder?email=${user?.email}`)
+    fetch(`https://super-shop-server.vercel.app/tackOrder?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, [user?.email]);

@@ -9,7 +9,7 @@ const AllBuyer = () => {
   };
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/allBuyer")
+    fetch("https://super-shop-server.vercel.app/allBuyer")
       .then((res) => res.json())
       .then((data) => setBuyer(data));
   }, []);

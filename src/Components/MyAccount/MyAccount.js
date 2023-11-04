@@ -6,12 +6,12 @@ const MyAccount = () => {
   const [cart, setCart] = useState([]);
   const [order, setOrder] = useState([]);
   useEffect(() => {
-    fetch(`https://supershop-server.vercel.app/addToCart?email=${user?.email}`)
+    fetch(`https://super-shop-server.vercel.app/addToCart?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, [user?.email]);
   useEffect(() => {
-    fetch(`https://supershop-server.vercel.app/tackOrder?email=${user?.email}`)
+    fetch(`https://super-shop-server.vercel.app/tackOrder?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, [user?.email]);

@@ -45,7 +45,7 @@ const AllProductsDetailes = () => {
       quantity: quantity,
       email: user?.email,
     };
-    fetch("https://supershop-server.vercel.app/addToCart", {
+    fetch("https://super-shop-server.vercel.app/addToCart", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -57,9 +57,8 @@ const AllProductsDetailes = () => {
         console.log(result);
         toast.custom((t) => (
           <div
-            className={`${
-              t.visible ? "animate-enter" : "animate-leave"
-            } max-w-md w-full bg-white shadow-lg border border-purple-600 rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
+            className={`${t.visible ? "animate-enter" : "animate-leave"
+              } max-w-md w-full bg-white shadow-lg border border-purple-600 rounded-lg pointer-events-auto flex ring-1 ring-black ring-opacity-5`}
           >
             <div className="flex-1 w-0 p-4">
               <div className="flex items-start">
@@ -109,7 +108,7 @@ const AllProductsDetailes = () => {
       confirmButtonText: "Yes, Report it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://supershop-server.vercel.app/report/${product?._id}`, {
+        fetch(`https://super-shop-server.vercel.app/report/${product?._id}`, {
           method: "PUT",
           headers: {
             "content-type": "application/json",
@@ -146,7 +145,7 @@ const AllProductsDetailes = () => {
       number,
     };
     console.log(productCart);
-    fetch("https://supershop-server.vercel.app/buyProducts", {
+    fetch("https://super-shop-server.vercel.app/buyProducts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

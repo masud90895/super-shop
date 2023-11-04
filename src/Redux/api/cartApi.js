@@ -5,8 +5,15 @@ const cartApi = api.injectEndpoints({
     getAllCartData: builder.query({
       query: (email) => `/addToCart?email=${email}`,
     }),
+    postProducts: builder.mutation({
+      query: (data) => ({
+        url: `/products`,
+        method: "POST",
+        body: data,
+      }),
+    })
   }),
 })
 
 
-export const { useGetAllCartDataQuery } = cartApi;
+export const { useGetAllCartDataQuery, usePostProductsMutation } = cartApi;

@@ -6,7 +6,7 @@ const SellerRequest = () => {
   const [refetch, setRefetch] = useState(false);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/sellerRequest")
+    fetch("https://super-shop-server.vercel.app/sellerRequest")
       .then((res) => res.json())
       .then((data) => setSellerRequest(data));
   }, [refetch]);

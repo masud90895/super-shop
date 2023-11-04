@@ -12,7 +12,7 @@ const LadiesBagCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/ladiesBag")
+    fetch("https://super-shop-server.vercel.app/ladiesBag")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

@@ -8,7 +8,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     fetch(
-      `https://supershop-server.vercel.app/allproducts?category=${params?.category}`
+      `https://super-shop-server.vercel.app/allproducts?category=${params?.category}`
     )
       .then((res) => res.json())
       .then((data) => setDeals(data));
@@ -112,14 +112,14 @@ const AllProducts = () => {
                 <div className="p-4">
                   <div className="flex items-center">
                     <h2 className="text-lg font-semibold">
-                      {deal.name.length > 22
-                        ? deal.name.slice(0, 22) + "..."
-                        : deal.name}
+                      {deal?.name?.length > 22
+                        ? deal?.name?.slice(0, 22) + "..."
+                        : deal?.name}
                     </h2>
                   </div>
                   <p className="text-sm text-gray-600 mt-2 h-[120px]">
-                    {deal.descriptions.length > 200
-                      ? deal.descriptions.slice(0, 200) + "..."
+                    {deal?.descriptions?.length > 200
+                      ? deal?.descriptions?.slice(0, 200) + "..."
                       : deal.descriptions}
                   </p>
                   <div className="flex mt-4">

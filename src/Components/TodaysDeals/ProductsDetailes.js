@@ -21,7 +21,7 @@ const ProductsDetailes = ({ products }) => {
       time: date,
       question,
     };
-    fetch(`https://supershop-server.vercel.app/question/${products?._id}`, {
+    fetch(`https://super-shop-server.vercel.app/question/${products?._id}`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -5,7 +5,7 @@ const AllSeller = () => {
   const [seller, setSeller] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/allSeller")
+    fetch("https://super-shop-server.vercel.app/allSeller")
       .then((res) => res.json())
       .then((data) => setSeller(data));
   }, []);

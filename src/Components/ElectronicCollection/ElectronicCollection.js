@@ -12,7 +12,7 @@ const ElectronicCollection = () => {
   const [deals, setDeals] = useState([]);
 
   useEffect(() => {
-    fetch("https://supershop-server.vercel.app/electronic")
+    fetch("https://super-shop-server.vercel.app/electronic")
       .then((res) => res.json())
       .then((data) => setDeals(data));
   }, []);

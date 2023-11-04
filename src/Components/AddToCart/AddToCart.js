@@ -9,7 +9,7 @@ const AddToCart = () => {
   const { user } = useContext(AuthContext);
   // const [cart, setCart] = useState([]);
   // useEffect(() => {
-  //   fetch(`https://supershop-server.vercel.app/addToCart?email=${user?.email}`)
+  //   fetch(`https://super-shop-server.vercel.app/addToCart?email=${user?.email}`)
   //     .then((res) => res.json())
   //     .then((data) => setCart(data));
   // }, [user?.email]);

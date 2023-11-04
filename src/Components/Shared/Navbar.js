@@ -36,7 +36,7 @@ const Navbar = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`https://supershop-server.vercel.app/user?email=${user?.email}`)
+      fetch(`https://super-shop-server.vercel.app/user?email=${user?.email}`)
         .then((res) => res.json())
         .then((result) => {
           setUserEmail(result);
