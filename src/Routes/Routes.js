@@ -20,6 +20,7 @@ import SuccessPayment from "../Components/Payment/SuccessPayment";
 import TrackOrder from "../Components/TrackOrder/TrackOrder";
 import DeshBoardLayout from "../Outlet/DeshBoardLayout";
 import Main from "../Outlet/Main";
+import AllProduct from "../Components/Deshboard/Admin/AllProduct";
 
 const router = createBrowserRouter([
   {
@@ -108,6 +109,10 @@ const router = createBrowserRouter([
         path: "myproducts",
         element: <MyProducts />,
       },
+      {
+        path: "products",
+        element: <AllProduct />,
+      }
     ],
   },
 ]);

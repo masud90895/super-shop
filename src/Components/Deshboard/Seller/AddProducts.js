@@ -4,6 +4,10 @@ import InputField from '../../InputField/InputField.tsx';
 import ReactQuills from '../../ReactQuill/ReactQuill.tsx';
 import ReactMultiSelect from '../../ReactSelector/ReactSelector.tsx';
 import { AuthContext } from '../../AuthProvider/AuthProvider.js';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { usePostProductsMutation } from '../../../Redux/api/cartApi.js';
+
 
 const collectionsData = [
   {
@@ -28,7 +32,8 @@ const collectionsData = [
 
 
 const AddProducts = () => {
-  const [isLoading, setIsLoading] = React.useState(false);
+
+  const [postProducts, { isLoading }] = usePostProductsMutation();
 
   // post product
 
@@ -38,6 +43,9 @@ const AddProducts = () => {
 
   // slit user.email with @
   const name = user?.email?.split('@')[0];
+
+
+  const navigation = useNavigate();
 
 
 
@@ -56,10 +64,10 @@ const AddProducts = () => {
 
   const onSubmit = (data) => {
     if (!data?.collections) {
-      alert('Please Select Category')
+      toast.error('Please Select Category')
       return;
     }
-    setIsLoading(true);
+
 
     data.collections = data?.collections?.name;
     data.question = [];
@@ -84,25 +92,22 @@ const AddProducts = () => {
         await (data.image = image?.data?.url);
 
         // post product
-        fetch(`https://super-shop-server.vercel.app/products`, {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            alert('Product Added Successfully')
-            setValue('name', '')
-            setValue('collections', '')
-            setValue('price', '')
-            setValue('discount', '')
-            setValue('storeName', '')
-            setValue('image', '')
-            reset();
-            setIsLoading(false);
-          })
+
+        postProducts(data).unwrap().then((data) => {
+          toast.success('Product Added Successfully')
+          setValue('name', '')
+          setValue('collections', '')
+          setValue('price', '')
+          setValue('discount', '')
+          setValue('storeName', '')
+          setValue('image', '')
+          reset();
+
+          navigation('/deshboard/products')
+        }).catch((err) => {
+          toast.error(err.message)
+        }
+        )
 
 
 
