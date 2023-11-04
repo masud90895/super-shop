@@ -22,7 +22,7 @@ const MyAccount = () => {
     <>
       <div className="flex items-center justify-center w-full py-8">
         {/* Card code block start */}
-        <div className="bg-white dark:bg-gray-800 shadow rounded">
+        <div className="bg-white   shadow rounded">
           <div className="relative ">
             <img
               className="h-56 shadow rounded-t w-full object-cover  object-center"
@@ -45,14 +45,14 @@ const MyAccount = () => {
             <div className="pt-3 mt-16 xl:pt-5 flex flex-col xl:flex-row items-start xl:items-center justify-between">
               <div className="xl:pr-16 w-full xl:w-2/3">
                 <div className="text-center xl:text-left mb-3 xl:mb-0 flex flex-col xl:flex-row items-center justify-between xl:justify-start">
-                  <h2 className="mb-3 xl:mb-0 xl:mr-4 text-2xl text-gray-800 dark:text-gray-100 font-medium tracking-normal">
+                  <h2 className="mb-3 xl:mb-0 xl:mr-4 text-2xl text-gray-800   font-medium tracking-normal">
                     {user?.displayName}
                   </h2>
-                  <div className="text-sm bg-purple-700 dark:bg-purple-600 text-white px-5 py-1 font-normal rounded-full">
+                  <div className="text-sm bg-purple-700  text-white px-5 py-1 font-normal rounded-full">
                     {order?.length > 2 ? "Pro" : "New User"}
                   </div>
                 </div>
-                <p className="text-center xl:text-left mt-2 text-sm tracking-normal text-gray-600 dark:text-gray-400 leading-5">
+                <p className="text-center xl:text-left mt-2 text-sm tracking-normal text-gray-600   leading-5">
                   HI, I am{" "}
                   <span className="text-purple-600">{user?.displayName}</span> .{" "}
                   <br /> I really enjoyed to visit Super Shop , Also Happy To by
@@ -61,26 +61,26 @@ const MyAccount = () => {
               </div>
               <div className="xl:px-10 xl:border-l xl:border-r w-full py-5 flex items-start justify-center xl:w-1/3">
                 <div className="mr-6 xl:mr-10">
-                  <h2 className="text-gray-600 dark:text-gray-400 font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
+                  <h2 className="text-gray-600   font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
                     82
                   </h2>
-                  <p className="text-gray-800 dark:text-gray-100 text-sm xl:text-xl leading-5">
+                  <p className="text-gray-800   text-sm xl:text-xl leading-5">
                     Reviews
                   </p>
                 </div>
                 <div className="mr-6 xl:mr-10">
-                  <h2 className="text-gray-600 dark:text-gray-400 font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
+                  <h2 className="text-gray-600   font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
                     {order?.length}
                   </h2>
-                  <p className="text-gray-800 dark:text-gray-100 text-sm xl:text-xl leading-5">
+                  <p className="text-gray-800   text-sm xl:text-xl leading-5">
                     Orders
                   </p>
                 </div>
                 <div>
-                  <h2 className="text-gray-600 dark:text-gray-400 font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
+                  <h2 className="text-gray-600   font-bold text-xl xl:text-2xl leading-6 mb-2 text-center">
                     {cart?.length}
                   </h2>
-                  <p className="text-gray-800 dark:text-gray-100 text-sm xl:text-xl leading-5">
+                  <p className="text-gray-800   text-sm xl:text-xl leading-5">
                     Carts
                   </p>
                 </div>

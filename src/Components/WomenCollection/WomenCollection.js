@@ -76,15 +76,15 @@ const WomenCollection = () => {
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                             style={{ backgroundImage: `url(${deal.image})` }}
                           ></div>
-                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64 dark:bg-gray-800">
-                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
+                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
+                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
                               {deal.name.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>
 
-                            <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                              <h1 className="font-bold text-gray-800 dark:text-gray-200">
+                            <div className=" px-3 py-2 bg-gray-200  ">
+                              <h1 className="font-bold text-gray-800  ">
                                 ৳{deal.price}
                               </h1>
                               <h1>
@@ -176,15 +176,15 @@ const WomenCollection = () => {
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                             style={{ backgroundImage: `url(${deal.image})` }}
                           ></div>
-                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64 dark:bg-gray-800">
-                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
+                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
+                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
                               {deal.name.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>
 
-                            <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                              <h1 className="font-bold text-gray-800 dark:text-gray-200">
+                            <div className=" px-3 py-2 bg-gray-200  ">
+                              <h1 className="font-bold text-gray-800  ">
                                 ৳{deal.price}
                               </h1>
                               <h1>
@@ -276,15 +276,15 @@ const WomenCollection = () => {
                             className="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
                             style={{ backgroundImage: `url(${deal.image})` }}
                           ></div>
-                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64 dark:bg-gray-800">
-                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">
+                          <div className="w-56 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg border md:w-64  ">
+                            <h3 className="py-2 font-bold tracking-wide text-center text-gray-800 uppercase  ">
                               {deal.name.length > 20
                                 ? deal.name.slice(0, 20) + "..."
                                 : deal.name}
                             </h3>
 
-                            <div className=" px-3 py-2 bg-gray-200 dark:bg-gray-700">
-                              <h1 className="font-bold text-gray-800 dark:text-gray-200">
+                            <div className=" px-3 py-2 bg-gray-200  ">
+                              <h1 className="font-bold text-gray-800  ">
                                 ৳{deal.price}
                               </h1>
                               <h1>

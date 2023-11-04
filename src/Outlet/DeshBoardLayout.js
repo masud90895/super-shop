@@ -77,10 +77,9 @@ const DeshBoardLayout = () => {
                       to="/deshboard"
                       aria-label="dashboard"
                       className={({ isActive }) =>
-                        `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                          isActive
-                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                            : "text-gray-600"
+                        `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                          ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                          : "text-gray-600"
                         }`
                       }
                     >
@@ -91,7 +90,7 @@ const DeshBoardLayout = () => {
                       >
                         <path
                           d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
-                          className="fill-current text-cyan-400 dark:fill-slate-600"
+                          className="fill-current text-cyan-400  "
                         ></path>
                         <path
                           d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
@@ -105,15 +104,15 @@ const DeshBoardLayout = () => {
                       <span className="-mr-1 font-medium">Dashboard</span>
                     </NavLink>
                   </li>
+
                   {userRole?.role === "admin" && (
                     <li>
                       <NavLink
                         to="allseller"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -145,10 +144,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="allbuyer"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -180,10 +178,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="sellerrequest"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -213,10 +210,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="reportedproduct"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -243,15 +239,14 @@ const DeshBoardLayout = () => {
                       </NavLink>
                     </li>
                   )}
-                  {userRole?.role === "seller" && (
+                  {(userRole?.role === "seller" || userRole?.role === "admin") && (
                     <li>
                       <NavLink
                         to="addproducts"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -283,10 +278,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="myproducts"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -384,10 +378,9 @@ const DeshBoardLayout = () => {
                         to="../deshboard"
                         aria-label="dashboard"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -398,7 +391,7 @@ const DeshBoardLayout = () => {
                         >
                           <path
                             d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"
-                            className="fill-current text-cyan-400 dark:fill-slate-600"
+                            className="fill-current text-cyan-400  "
                           ></path>
                           <path
                             d="M13 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2V8Z"
@@ -416,10 +409,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="allseller"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -449,10 +441,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="allbuyer"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -482,10 +473,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="sellerrequest"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >
@@ -513,10 +503,9 @@ const DeshBoardLayout = () => {
                       <NavLink
                         to="reportedproduct"
                         className={({ isActive }) =>
-                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${
-                            isActive
-                              ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
-                              : "text-gray-600"
+                          `relative px-4 py-3 flex items-center space-x-4 rounded-xl  ${isActive
+                            ? "bg-gradient-to-r from-purple-600 to-purple-400 text-white"
+                            : "text-gray-600"
                           }`
                         }
                       >

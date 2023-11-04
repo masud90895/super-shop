@@ -7,7 +7,7 @@ const SuccessPayment = () => {
     "transactionId"
   );
   console.log(query);
-  useEffect(() => {});
+  useEffect(() => { });
   const changeHandler = (e) => {
     const slider = document.getElementById("slider");
     slider.defaultValue = 0;
@@ -57,32 +57,32 @@ const SuccessPayment = () => {
         {show ? (
           <div className=" mx-auto container lg:max-w-[356px] md:max-w-[720px] max-w-[343px] py-8 px-4 bg-white shadow rounded-md border border-gray-600">
 
-              <div className="w-full flex justify-center text-green-400 mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="icon icon-tabler icon-tabler-circle-check"
-                  width={56}
-                  height={56}
-                  viewBox="0 0 24 24"
-                  strokeWidth={1}
-                  stroke="currentColor"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path stroke="none" d="M0 0h24v24H0z" />
-                  <circle cx={12} cy={12} r={9} />
-                  <path d="M9 12l2 2l4 -4" />
-                </svg>
-              </div>
-              <h1 className="text-center text-gray-800 dark:text-gray-100 font-lg font-bold tracking-normal leading-tight mb-4">
-                Payment Processing Successful
-              </h1>
-              <p className="mb-5 text-sm text-gray-600 dark:text-gray-400 text-center font-normal">
-                Thank you for your payment. An automated payment receipt will be
-                sent to your email. Check the action below for more details.
-              </p>
-            
+            <div className="w-full flex justify-center text-green-400 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="icon icon-tabler icon-tabler-circle-check"
+                width={56}
+                height={56}
+                viewBox="0 0 24 24"
+                strokeWidth={1}
+                stroke="currentColor"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" />
+                <circle cx={12} cy={12} r={9} />
+                <path d="M9 12l2 2l4 -4" />
+              </svg>
+            </div>
+            <h1 className="text-center text-gray-800   font-lg font-bold tracking-normal leading-tight mb-4">
+              Payment Processing Successful
+            </h1>
+            <p className="mb-5 text-sm text-gray-600   text-center font-normal">
+              Thank you for your payment. An automated payment receipt will be
+              sent to your email. Check the action below for more details.
+            </p>
+
 
             <p className="text-base font-semibold leading-normal text-center text-gray-800">
               How was your experience with us?
@@ -297,9 +297,9 @@ const SuccessPayment = () => {
             </p>
             <div className="mt-6">
               <Link to='/'>
-              <button className="text-sm font-medium leading-none text-white px-6 py-4 bg-[#10b981] rounded w-full hover:bg-green-400 transform duration-300 ease-in-out">
-                Go to Homepage
-              </button>
+                <button className="text-sm font-medium leading-none text-white px-6 py-4 bg-[#10b981] rounded w-full hover:bg-green-400 transform duration-300 ease-in-out">
+                  Go to Homepage
+                </button>
               </Link>
             </div>
           </div>

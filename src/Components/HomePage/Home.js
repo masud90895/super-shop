@@ -12,6 +12,7 @@ import MobailApp from './MobailApp';
 import TodaysDeals from '../TodaysDeals/TodaysDeals';
 import Partner from '../Partner/Partner';
 import Delivery from '../Delivary/Delivary';
+import NewsLetter from './NewsLetter';
 
 const Home = () => {
     const categories = [
@@ -25,7 +26,8 @@ const Home = () => {
         <ShareeCollection />,
         <Delivery />,
         <Partner />,
-        <MobailApp />
+        <MobailApp />,
+        <NewsLetter />
     ]
     return (
         <div>
@@ -35,7 +37,7 @@ const Home = () => {
             {
                 categories?.map((category, i) => <div key={i}>{category}</div>)
             }
-            
+
 
         </div>
     );

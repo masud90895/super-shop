@@ -33,7 +33,7 @@ const Navbar = () => {
         toast.error(err.message);
       });
   };
-  
+
   useEffect(() => {
     if (user?.email) {
       fetch(`https://supershop-server.vercel.app/user?email=${user?.email}`)
@@ -119,7 +119,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* navbar 2nd  */}
-      <div className="lg:flex  hidden lg:block justify-around  mt-1 ">
+      <div className="lg:flex  hidden  justify-around  mt-1 pb-2">
         <div>
           <img loading="lazy" className="h-11" src={companyLogo} alt="" />
         </div>
@@ -225,7 +225,7 @@ const Navbar = () => {
                 </div>
               </div>
               {show && (
-                <ul className="visible z-50 border transition duration-300 opacity-100 bg-white dark:bg-gray-800  shadow rounded mt-2 py-1 w-48 absolute ">
+                <ul className="visible z-50 border transition duration-300 opacity-100 bg-white    shadow rounded mt-2 py-1 w-48 absolute ">
                   {!user?.email && (
                     <Link
                       to="login"
@@ -317,7 +317,7 @@ const Navbar = () => {
                     <span className="ml-2 font-normal">CAMPAIGN</span>
                   </li>
                   <li>
-                    <hr className="border-gray-200 dark:border-gray-700 my-1" />
+                    <hr className="border-gray-200  my-1" />
                   </li>
                   <Link
                     to="../../trackOrder"

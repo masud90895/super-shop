@@ -5,10 +5,10 @@ const Deshboard = () => {
     <>
       <>
         <div className="mt-9 ">
-          <div className=" rounded shadow bg-white dark:bg-gray-800 py-6 pl-6 pr-12">
+          <div className=" rounded shadow bg-white   py-6 pl-6 pr-12">
             <div className="flex items-center justify-between">
-              <p className="text-lg md:pr-96 font-semibold leading-4 text-gray-800 dark:text-gray-100">Statistics</p>
-              <p className="text-xs leading-3 pl-6 text-right text-gray-500 dark:text-gray-400">Updated 1 month ago</p>
+              <p className="text-lg md:pr-96 font-semibold leading-4 text-gray-800  ">Statistics</p>
+              <p className="text-xs leading-3 pl-6 text-right text-gray-500  ">Updated 1 month ago</p>
             </div>
             <div className="md:flex items-center justify-between pt-8">
               <div className="flex items-center">
@@ -18,8 +18,8 @@ const Deshboard = () => {
                   </svg>
                 </div>
                 <div className="pl-4">
-                  <p className="w-11 text-lg font-semibold leading-none text-gray-800 dark:text-gray-100">230k</p>
-                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2 dark:text-gray-400">Sales</p>
+                  <p className="w-11 text-lg font-semibold leading-none text-gray-800  ">230k</p>
+                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2  ">Sales</p>
                 </div>
               </div>
               <div className="flex items-center md:pt-0 pt-4 md:pl-10">
@@ -34,8 +34,8 @@ const Deshboard = () => {
                   </svg>
                 </div>
                 <div className="pl-4">
-                  <p className="w-11 text-lg font-semibold leading-none text-gray-800 dark:text-gray-100">8.549k</p>
-                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2 dark:text-gray-400">Customers</p>
+                  <p className="w-11 text-lg font-semibold leading-none text-gray-800  ">8.549k</p>
+                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2  ">Customers</p>
                 </div>
               </div>
               <div className="flex items-center md:pt-0 pt-4 md:pl-10">
@@ -50,8 +50,8 @@ const Deshboard = () => {
                   </svg>
                 </div>
                 <div className="pl-4">
-                  <p className="w-11 text-lg font-semibold leading-none text-gray-800 dark:text-gray-100">1.423k</p>
-                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2 dark:text-gray-400">Products</p>
+                  <p className="w-11 text-lg font-semibold leading-none text-gray-800  ">1.423k</p>
+                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2  ">Products</p>
                 </div>
               </div>
               <div className="flex items-center md:pt-0 pt-4 md:pl-10">
@@ -66,8 +66,8 @@ const Deshboard = () => {
                   </svg>
                 </div>
                 <div className="pl-4">
-                  <p className="w-11 text-lg font-semibold leading-none text-gray-800 dark:text-gray-100">৳9745</p>
-                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2 dark:text-gray-400">Revenue</p>
+                  <p className="w-11 text-lg font-semibold leading-none text-gray-800  ">৳9745</p>
+                  <p className="w-8 text-xs leading-3 text-gray-500 pt-2  ">Revenue</p>
                 </div>
               </div>
             </div>
@@ -855,8 +855,8 @@ const Deshboard = () => {
         {/* Card is full width. Use in 12 col grid for best view. */}
         {/* Card code block start */}
         <div className="w-full grid sm:grid-cols-1 mb-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
-          <div className="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
-            <div className="text-gray-700 dark:text-gray-400">
+          <div className="bg-white   rounded py-5 pl-6 flex items-start shadow">
+            <div className="text-gray-700  ">
               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" />
                 <circle cx={12} cy={13} r={2} />
@@ -865,10 +865,10 @@ const Deshboard = () => {
               </svg>
             </div>
             <div className="pl-3 pr-10 mt-1">
-              <h3 className="font-normal leading-4 text-gray-800 dark:text-gray-100 text-base">Profit Earned</h3>
+              <h3 className="font-normal leading-4 text-gray-800   text-base">Profit Earned</h3>
               <div className="flex items-end mt-4">
-                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-bold">2,330</h2>
-                <p className="ml-2 mb-1 text-sm text-gray-600 dark:text-gray-400">from 2,125</p>
+                <h2 className="text-indigo-700   text-2xl leading-normal font-bold">2,330</h2>
+                <p className="ml-2 mb-1 text-sm text-gray-600  ">from 2,125</p>
               </div>
               <div className="flex items-center mt-5">
                 <div className="text-green-400">
@@ -882,8 +882,8 @@ const Deshboard = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
-            <div className="text-gray-700 dark:text-gray-400">
+          <div className="bg-white   rounded py-5 pl-6 flex items-start shadow">
+            <div className="text-gray-700  ">
               <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" />
                 <circle cx={12} cy={13} r={2} />
@@ -892,10 +892,10 @@ const Deshboard = () => {
               </svg>
             </div>
             <div className="pl-3 pr-10 mt-1">
-              <h3 className="font-normal leading-4 text-gray-800 dark:text-gray-100 text-base">Total Sales</h3>
+              <h3 className="font-normal leading-4 text-gray-800   text-base">Total Sales</h3>
               <div className="flex items-end mt-4">
-                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-bold">2,330</h2>
-                <p className="ml-2 mb-1 text-sm text-gray-600 dark:text-gray-400">from 2,850</p>
+                <h2 className="text-indigo-700   text-2xl leading-normal font-bold">2,330</h2>
+                <p className="ml-2 mb-1 text-sm text-gray-600  ">from 2,850</p>
               </div>
               <div className="flex items-center mt-5">
                 <div className="text-red-400">
@@ -909,18 +909,18 @@ const Deshboard = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-gray-800 rounded py-5 pl-6 flex items-start shadow">
-            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard text-gray-700 dark:text-gray-400" width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <div className="bg-white   rounded py-5 pl-6 flex items-start shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-dashboard text-gray-700  " width={32} height={32} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" />
               <circle cx={12} cy={13} r={2} />
               <line x1="13.45" y1="11.55" x2="15.5" y2="9.5" />
               <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
             </svg>
             <div className="pl-3 pr-10 mt-1">
-              <h3 className="font-normal leading-4 text-gray-800 dark:text-gray-100 text-base">Profit Earned</h3>
+              <h3 className="font-normal leading-4 text-gray-800   text-base">Profit Earned</h3>
               <div className="flex items-end mt-4">
-                <h2 className="text-indigo-700 dark:text-indigo-600 text-2xl leading-normal font-bold">৳1200</h2>
-                <p className="ml-2 mb-1 text-sm text-gray-600 dark:text-gray-400">from ৳800</p>
+                <h2 className="text-indigo-700   text-2xl leading-normal font-bold">৳1200</h2>
+                <p className="ml-2 mb-1 text-sm text-gray-600  ">from ৳800</p>
               </div>
               <div className="flex items-center mt-5">
                 <div className="text-green-400">

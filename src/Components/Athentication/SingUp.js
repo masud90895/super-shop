@@ -88,19 +88,19 @@ const SingUp = () => {
   };
 
   return (
-    <section className="bg-white dark:bg-gray-900 ">
+    <section className="bg-white  ">
       <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
         <div className="w-full max-w-md border p-4 rounded-xl">
           <form onSubmit={handleRegistration}>
             <div className="flex items-center justify-center mt-6">
               <Link
                 to="../login"
-                className="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b dark:border-gray-400 dark:text-gray-300"
+                className="w-1/3 pb-4 font-medium text-center text-gray-500 capitalize border-b   "
               >
                 sign in
               </Link>
 
-              <a className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-purple-500 dark:border-purple-400 dark:text-white">
+              <a className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-purple-500   ">
                 sign up
               </a>
             </div>
@@ -109,7 +109,7 @@ const SingUp = () => {
               <span className="absolute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                  className="w-6 h-6 mx-3 text-gray-300 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -126,7 +126,7 @@ const SingUp = () => {
               <input
                 type="text"
                 name="name"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-purple-400 dark:focus:border-purple-300 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11     focus:border-purple-400   focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Username"
                 required
               />
@@ -134,11 +134,11 @@ const SingUp = () => {
 
             {/* <label
               htmlFor="dropzone-file"
-              className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer dark:border-gray-600 dark:bg-gray-900"
+              className="flex items-center px-3 py-3 mx-auto mt-6 text-center bg-white border-2 border-dashed rounded-lg cursor-pointer   "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="w-6 h-6 text-gray-300 dark:text-gray-500"
+                className="w-6 h-6 text-gray-300 "
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -166,7 +166,7 @@ const SingUp = () => {
               <span className="absolute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                  className="w-6 h-6 mx-3 text-gray-300 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -183,7 +183,7 @@ const SingUp = () => {
               <input
                 type="email"
                 name="email"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-purple-400 dark:focus:border-purple-300 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11      focus:border-purple-400   focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
                 required
               />
@@ -193,7 +193,7 @@ const SingUp = () => {
               <span className="absolute">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-6 h-6 mx-3 text-gray-300 dark:text-gray-500"
+                  className="w-6 h-6 mx-3 text-gray-300 "
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -210,7 +210,7 @@ const SingUp = () => {
               <input
                 type="password"
                 name="password"
-                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-purple-400 dark:focus:border-purple-300 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg      focus:border-purple-400   focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
                 required
               />
@@ -229,7 +229,7 @@ const SingUp = () => {
               <div className="mt-6 text-center ">
                 <Link
                   to="../login"
-                  className="text-sm text-purple-500 hover:underline dark:text-purple-400"
+                  className="text-sm text-purple-500 hover:underline "
                 >
                   Already have an account?
                 </Link>
