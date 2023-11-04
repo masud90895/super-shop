@@ -36,8 +36,13 @@ const AddProducts = () => {
     register,
     handleSubmit,
     formState: { errors },
-    setValue
+    setValue,
+    watch
   } = useForm()
+
+
+  const watchData = watch();
+  // console.log(watchData);
 
   const onSubmit = (data) => {
     if (!data?.collections) {
@@ -50,8 +55,26 @@ const AddProducts = () => {
     data.sellerName = user?.displayName ?? name;
     data.sellerEmail = user?.email;
 
+    // upload image
 
-    console.log(data);
+    const image = data.image[0];
+    const formData = new FormData();
+    formData.append("image", image);
+
+    fetch(`https://api.imgbb.com/1/upload?key=25b08f5eaf567ebb996f971a9098c761`, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then(async (image) => {
+        await (data.image = image?.data?.url);
+
+        console.log(data);
+
+
+      }
+      );
+
 
   }
 
@@ -76,20 +99,45 @@ const AddProducts = () => {
 
               <span className='text-red-500 ml-1'>*</span>
             </label>
-            <div id="image-preview" class="max-w-sm p-6 mb-4 bg-gray-100 border-dashed border-2 border-gray-400 rounded-lg items-center mx-auto text-center cursor-pointer">
-              <input id="upload" name="image" type="file" class="hidden" accept="image/*"  {...register("image", { required: true })} />
-              <label for="upload" class="cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-700 mx-auto mb-4">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
-                </svg>
-                <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload picture</h5>
-                <p class="font-normal text-sm text-gray-400 md:px-6">Choose photo size should be less than <b class="text-gray-600">2mb</b></p>
-                <p class="font-normal text-sm text-gray-400 md:px-6">and should be in <b class="text-gray-600">JPG, PNG, or GIF</b> format.</p>
-                <span id="filename" class="text-gray-500 bg-gray-200 z-50"></span>
-              </label>
-            </div>
+
+            {
+              watchData?.image?.length > 0 ?
+
+                // showed image and remove button
+                <div className='flex items-center'>
+                  <img src={URL.createObjectURL(watchData?.image[0])} alt="" className='w-[200px] h-[200px] object-cover my-[8px]' />
+                  <button type='button' className='ml-4 text-red-500' onClick={() => setValue('image', '')}>Remove</button>
+                </div>
+
+                // <img src={URL.createObjectURL(watchData?.image[0])} alt="" className='w-[100px] h-[100px] object-cover' /> 
+
+                :
+
+
+                <div id="image-preview" class="max-w-sm p-6 mb-4 bg-gray-100 border-dashed border-2 border-gray-400 rounded-lg items-center mx-auto text-center cursor-pointer">
+                  <input id="upload" name="image" type="file" class="hidden" accept="image/*"  {...register("image", { required: true })} />
+                  <label for="upload" class="cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-gray-700 mx-auto mb-4">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                    </svg>
+                    <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-700">Upload picture</h5>
+                    <p class="font-normal text-sm text-gray-400 md:px-6">Choose photo size should be less than <b class="text-gray-600">2mb</b></p>
+                    <p class="font-normal text-sm text-gray-400 md:px-6">and should be in <b class="text-gray-600">JPG, PNG, or GIF</b> format.</p>
+                    <span id="filename" class="text-gray-500 bg-gray-200 z-50"></span>
+                  </label>
+                </div>
+            }
+
+
+
+
+
+
+
+
+
             {errors.image && (
-              <span className="text-red-500">This field is required</span>
+              <span className="text-red-500">Image  is required</span>
             )}
           </div>
 
@@ -97,7 +145,7 @@ const AddProducts = () => {
 
 
 
-      
+
 
           <InputField
             label='Product Name'
