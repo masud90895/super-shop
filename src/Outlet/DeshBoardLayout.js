@@ -38,7 +38,7 @@ const DeshBoardLayout = () => {
       .catch((err) => console.log(err));
   }, [user?.email]);
 
-  console.log(userRole);
+
   return (
     <>
       <div className="w-full h-full bg-gray-200">
