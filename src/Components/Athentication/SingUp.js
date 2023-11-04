@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
@@ -19,7 +19,7 @@ const SingUp = () => {
 
     userCreate(email, password)
       .then((result) => {
-        const user = result.user;
+
 
         updateName(name)
           .then((result) => {
@@ -100,9 +100,9 @@ const SingUp = () => {
                 sign in
               </Link>
 
-              <a className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-purple-500   ">
+              <p className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-purple-500   ">
                 sign up
-              </a>
+              </p>
             </div>
 
             <div className="relative flex items-center mt-8">

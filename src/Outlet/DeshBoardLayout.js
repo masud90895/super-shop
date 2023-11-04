@@ -639,7 +639,7 @@ const DeshBoardLayout = () => {
                     >
                       <div className="rounded-full">
                         {profile ? (
-                          <ul className="p-2 w-full border-r bg-white absolute rounded left-0 shadow mt-12 sm:mt-16 ">
+                          <ul className="p-2 w-[150px] border-r bg-white absolute rounded left-0 shadow mt-12 sm:mt-16 ">
                             <li className="flex w-full justify-between text-gray-600 hover:text-purple-700 cursor-pointer items-center">
                               <div className="flex items-center">
                                 <svg
